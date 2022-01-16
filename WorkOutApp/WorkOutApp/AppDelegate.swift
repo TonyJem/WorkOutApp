@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  WorkOutApp
-//
-//  Created by Office-iMac on 2022-01-16.
-//
-
 import UIKit
 
 @main
@@ -31,6 +24,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
 }
-

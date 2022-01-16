@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  WorkOutApp
-//
-//  Created by Office-iMac on 2022-01-16.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
