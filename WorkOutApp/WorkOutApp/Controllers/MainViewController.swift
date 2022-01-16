@@ -2,6 +2,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    // MARK: - Views
+    private let calendarView = CalendarView()
+    
     private let userPhotoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = #colorLiteral(red: 0.7607843137, green: 0.7607843137, blue: 0.7607843137, alpha: 1)
@@ -9,14 +12,6 @@ class MainViewController: UIViewController {
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
-    }()
-    
-    private let calendarView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .specialGreen
-        view.layer.cornerRadius = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
     }()
     
     private let userNameLabel: UILabel = {
@@ -67,6 +62,12 @@ class MainViewController: UIViewController {
         setConstraints()
     }
     
+    // MARK: - Actions
+    @objc private func addWorkoutButtonAction() {
+        print("🟢 addWorkoutButton did Tap in MainViewController")
+    }
+    
+    // MARK: - PrivateMethods
     private func setupViews() {
         view.backgroundColor = .specialBackground
         
@@ -75,14 +76,9 @@ class MainViewController: UIViewController {
         view.addSubview(userNameLabel)
         view.addSubview(addWorkoutButton)
     }
-  
-// MARK: - Actions
-    @objc private func addWorkoutButtonAction() {
-        print("🟢 addWorkoutButton did Tap in MainViewController")
-    }
 }
 
-// MARK: - setConstraints
+// MARK: - SetConstraints
 extension MainViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
