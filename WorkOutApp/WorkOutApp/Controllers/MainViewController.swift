@@ -19,10 +19,21 @@ class MainViewController: UIViewController {
         return view
     }()
     
+    private let userNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Artemij Lebedev"
+        label.font = .robotoMedium24()
+        label.textColor = .specialGray
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLayoutSubviews() {
         userPhotoImageView.layer.cornerRadius = userPhotoImageView.frame.width / 2
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +46,7 @@ class MainViewController: UIViewController {
         
         view.addSubview(calendarView)
         view.addSubview(userPhotoImageView)
+        view.addSubview(userNameLabel)
     }
     
 }
@@ -53,6 +65,12 @@ extension MainViewController {
             calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             calendarView.heightAnchor.constraint(equalToConstant: 70)
+        ])
+        
+        NSLayoutConstraint.activate([
+            userNameLabel.leadingAnchor.constraint(equalTo: userPhotoImageView.trailingAnchor, constant: 5),
+            userNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            userNameLabel.bottomAnchor.constraint(equalTo: calendarView.topAnchor, constant: -10)
         ])
     }
 }
