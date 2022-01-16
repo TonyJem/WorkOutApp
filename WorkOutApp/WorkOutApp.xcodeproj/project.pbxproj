@@ -12,6 +12,10 @@
 		3A78AB22279410E80032270C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB21279410E80032270C /* ViewController.swift */; };
 		3A78AB27279410EF0032270C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A78AB26279410EF0032270C /* Assets.xcassets */; };
 		3A78AB2A279410EF0032270C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A78AB28279410EF0032270C /* LaunchScreen.storyboard */; };
+		3A78AB39279458DB0032270C /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB38279458DB0032270C /* UIFont + Extensions.swift */; };
+		3A78AB3B279458F30032270C /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB3A279458F30032270C /* UIView + Extensions.swift */; };
+		3A78AB3D2794590A0032270C /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB3C2794590A0032270C /* UIColor + Extensions.swift */; };
+		3A78AB3F279459210032270C /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB3E279459210032270C /* UIStackView + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		3A78AB26279410EF0032270C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A78AB29279410EF0032270C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A78AB2B279410EF0032270C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A78AB38279458DB0032270C /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
+		3A78AB3A279458F30032270C /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		3A78AB3C2794590A0032270C /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		3A78AB3E279459210032270C /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 		3A78AB36279457240032270C /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3A78AB38279458DB0032270C /* UIFont + Extensions.swift */,
+				3A78AB3A279458F30032270C /* UIView + Extensions.swift */,
+				3A78AB3C2794590A0032270C /* UIColor + Extensions.swift */,
+				3A78AB3E279459210032270C /* UIStackView + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -190,7 +202,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A78AB3B279458F30032270C /* UIView + Extensions.swift in Sources */,
+				3A78AB39279458DB0032270C /* UIFont + Extensions.swift in Sources */,
+				3A78AB3F279459210032270C /* UIStackView + Extensions.swift in Sources */,
 				3A78AB22279410E80032270C /* ViewController.swift in Sources */,
+				3A78AB3D2794590A0032270C /* UIColor + Extensions.swift in Sources */,
 				3A78AB1E279410E80032270C /* AppDelegate.swift in Sources */,
 				3A78AB20279410E80032270C /* SceneDelegate.swift in Sources */,
 			);
