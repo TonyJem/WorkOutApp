@@ -11,6 +11,14 @@ class MainViewController: UIViewController {
         return imageView
     }()
     
+    private let calendarView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .specialGreen
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLayoutSubviews() {
         userPhotoImageView.layer.cornerRadius = userPhotoImageView.frame.width / 2
     }
@@ -25,6 +33,7 @@ class MainViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .specialBackground
         
+        view.addSubview(calendarView)
         view.addSubview(userPhotoImageView)
     }
     
@@ -37,6 +46,13 @@ extension MainViewController {
             userPhotoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             userPhotoImageView.heightAnchor.constraint(equalToConstant: 100),
             userPhotoImageView.widthAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        NSLayoutConstraint.activate([
+            calendarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            calendarView.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
 }
