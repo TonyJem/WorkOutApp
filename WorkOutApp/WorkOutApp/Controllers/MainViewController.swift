@@ -10,6 +10,10 @@ class MainViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    override func viewDidLayoutSubviews() {
+        userPhotoImageView.layer.cornerRadius = userPhotoImageView.frame.width / 2
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
