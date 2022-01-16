@@ -5,8 +5,8 @@ class CalendarView: UIView {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionVIew = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionVIew.translatesAutoresizingMaskIntoConstraints = false
         collectionVIew.backgroundColor = .none
+        collectionVIew.translatesAutoresizingMaskIntoConstraints = false
         return collectionVIew
     }()
     
