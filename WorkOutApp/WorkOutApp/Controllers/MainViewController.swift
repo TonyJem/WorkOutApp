@@ -37,6 +37,9 @@ class MainViewController: UIViewController {
         button.setTitle("Add workout", for: .normal)
         button.titleLabel?.font = .robotoMedium12()
         button.tintColor = .specialDarkGreen
+        
+        // TODO: Replace deprecated stuff
+        // Try to use solution from: https://stackoverflow.com/questions/68328038/imageedgeinsets-was-deprecated-in-ios-15-0
         button.imageEdgeInsets = UIEdgeInsets(top: 0,
                                               left: 20,
                                               bottom: 15,
