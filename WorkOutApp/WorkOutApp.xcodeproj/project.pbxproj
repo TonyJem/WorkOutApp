@@ -20,6 +20,7 @@
 		3A78AB4427945FAA0032270C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A78AB4327945FAA0032270C /* Roboto-Bold.ttf */; };
 		3A78AB47279493B50032270C /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB46279493B40032270C /* CalendarView.swift */; };
 		3A78AB4A2794A3770032270C /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB492794A3770032270C /* CalendarCollectionViewCell.swift */; };
+		3A78AB4C279746FD0032270C /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB4B279746FD0032270C /* WeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3A78AB4327945FAA0032270C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		3A78AB46279493B40032270C /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		3A78AB492794A3770032270C /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A78AB4B279746FD0032270C /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				3A78AB482794A3630032270C /* Cells */,
 				3A78AB46279493B40032270C /* CalendarView.swift */,
+				3A78AB4B279746FD0032270C /* WeatherView.swift */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				3A78AB47279493B50032270C /* CalendarView.swift in Sources */,
 				3A78AB3F279459210032270C /* UIStackView + Extensions.swift in Sources */,
 				3A78AB22279410E80032270C /* MainViewController.swift in Sources */,
+				3A78AB4C279746FD0032270C /* WeatherView.swift in Sources */,
 				3A78AB3D2794590A0032270C /* UIColor + Extensions.swift in Sources */,
 				3A78AB4A2794A3770032270C /* CalendarCollectionViewCell.swift in Sources */,
 				3A78AB1E279410E80032270C /* AppDelegate.swift in Sources */,
