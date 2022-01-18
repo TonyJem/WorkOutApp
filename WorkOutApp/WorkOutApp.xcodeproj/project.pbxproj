@@ -22,6 +22,7 @@
 		3A78AB4A2794A3770032270C /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB492794A3770032270C /* CalendarCollectionViewCell.swift */; };
 		3A78AB4C279746FD0032270C /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB4B279746FD0032270C /* WeatherView.swift */; };
 		3A78AB4E27974BEE0032270C /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB4D27974BEE0032270C /* WorkoutTableViewCell.swift */; };
+		3A78AB50279752180032270C /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB4F279752170032270C /* UILabel + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		3A78AB492794A3770032270C /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A78AB4B279746FD0032270C /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		3A78AB4D27974BEE0032270C /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		3A78AB4F279752170032270C /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				3A78AB3A279458F30032270C /* UIView + Extensions.swift */,
 				3A78AB3C2794590A0032270C /* UIColor + Extensions.swift */,
 				3A78AB3E279459210032270C /* UIStackView + Extensions.swift */,
+				3A78AB4F279752170032270C /* UILabel + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			files = (
 				3A78AB3B279458F30032270C /* UIView + Extensions.swift in Sources */,
 				3A78AB39279458DB0032270C /* UIFont + Extensions.swift in Sources */,
+				3A78AB50279752180032270C /* UILabel + Extensions.swift in Sources */,
 				3A78AB47279493B50032270C /* CalendarView.swift in Sources */,
 				3A78AB3F279459210032270C /* UIStackView + Extensions.swift in Sources */,
 				3A78AB4E27974BEE0032270C /* WorkoutTableViewCell.swift in Sources */,
