@@ -2,6 +2,7 @@ import UIKit
 
 class NewWorkoutViewController: UIViewController {
     
+    // MARK: - Views
     private let newWorkoutLabel: UILabel = {
         let label = UILabel()
         label.text = "NEW WORKOUT"
@@ -12,6 +13,15 @@ class NewWorkoutViewController: UIViewController {
         return label
     }()
     
+    private let closeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setBackgroundImage(UIImage(named: "closeButton"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
+        return button
+    }()
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,12 +29,19 @@ class NewWorkoutViewController: UIViewController {
         setConstraints()
     }
     
+    // MARK: - Actions
+    @objc private func closeButtonAction() {
+        print("🟢 closeButton did Tap in NewWorkoutViewController")
+//        dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Private Methods
     private func setupViews() {
         view.backgroundColor = .specialBackground
         
         view.addSubview(newWorkoutLabel)
+        view.addSubview(closeButton)
     }
-    
 }
 
 //MARK: - SetConstraints
@@ -34,6 +51,13 @@ extension NewWorkoutViewController {
         NSLayoutConstraint.activate([
             newWorkoutLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             newWorkoutLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            closeButton.centerYAnchor.constraint(equalTo: newWorkoutLabel.centerYAnchor),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            closeButton.heightAnchor.constraint(equalToConstant: 30),
+            closeButton.widthAnchor.constraint(equalToConstant: 30)
         ])
     }
 }
