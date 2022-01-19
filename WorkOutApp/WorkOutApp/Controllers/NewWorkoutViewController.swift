@@ -44,6 +44,8 @@ class NewWorkoutViewController: UIViewController {
     
     private let repsOrTimerLabel = UILabel(text: "Reps or timer")
     
+    private let repsOrTimerView = RepsOrTimerView()
+    
     // MARK: - LifeCycle
     override func viewDidLayoutSubviews() {
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
@@ -74,6 +76,8 @@ class NewWorkoutViewController: UIViewController {
         view.addSubview(dateAndRepeatLabel)
         view.addSubview(dateAndRepeatView)
         view.addSubview(repsOrTimerLabel)
+        view.addSubview(repsOrTimerView)
+        
     }
     
     private func setDelegates() {
@@ -137,5 +141,11 @@ extension NewWorkoutViewController {
             repsOrTimerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
+        NSLayoutConstraint.activate([
+            repsOrTimerView.topAnchor.constraint(equalTo: repsOrTimerLabel.bottomAnchor, constant: 3),
+            repsOrTimerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            repsOrTimerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            repsOrTimerView.heightAnchor.constraint(equalToConstant: 320)
+        ])
     }
 }
