@@ -69,6 +69,7 @@ class NewWorkoutViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        addTaps()
     }
     
     // MARK: - Actions
@@ -85,6 +86,10 @@ class NewWorkoutViewController: UIViewController {
         } else {
             print("🔴🔴 repeatSwitch is OFF in NewWorkoutViewController")
         }
+    }
+    
+    @objc private func hideKeyboeard() {
+        view.endEditing(true)
     }
     
     // MARK: - Private Methods
@@ -104,6 +109,12 @@ class NewWorkoutViewController: UIViewController {
     
     private func setDelegates() {
         nameTextField.delegate = self
+    }
+    
+    private func addTaps() {
+        let tapScreen = UITapGestureRecognizer(target: self, action: #selector(hideKeyboeard))
+        tapScreen.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapScreen)
     }
 }
 
