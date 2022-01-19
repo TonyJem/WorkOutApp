@@ -25,6 +25,7 @@
 		3A78AB50279752180032270C /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB4F279752170032270C /* UILabel + Extensions.swift */; };
 		3A78AB532797529D0032270C /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB522797529D0032270C /* DateAndRepeatView.swift */; };
 		3A78AB55279753DE0032270C /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB54279753DE0032270C /* RepsOrTimerView.swift */; };
+		3A78AB572797E7080032270C /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB562797E7070032270C /* NewWorkoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		3A78AB4F279752170032270C /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		3A78AB522797529D0032270C /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		3A78AB54279753DE0032270C /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
+		3A78AB562797E7070032270C /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				3A78AB21279410E80032270C /* MainViewController.swift */,
+				3A78AB562797E7070032270C /* NewWorkoutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				3A78AB4E27974BEE0032270C /* WorkoutTableViewCell.swift in Sources */,
 				3A78AB22279410E80032270C /* MainViewController.swift in Sources */,
 				3A78AB4C279746FD0032270C /* WeatherView.swift in Sources */,
+				3A78AB572797E7080032270C /* NewWorkoutViewController.swift in Sources */,
 				3A78AB55279753DE0032270C /* RepsOrTimerView.swift in Sources */,
 				3A78AB3D2794590A0032270C /* UIColor + Extensions.swift in Sources */,
 				3A78AB4A2794A3770032270C /* CalendarCollectionViewCell.swift in Sources */,
