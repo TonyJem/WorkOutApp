@@ -22,6 +22,10 @@ class NewWorkoutViewController: UIViewController {
     }()
     
     // MARK: - LifeCycle
+    override func viewDidLayoutSubviews() {
+        closeButton.layer.cornerRadius = closeButton.frame.height / 2
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
