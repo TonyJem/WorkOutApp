@@ -68,7 +68,7 @@ class MainViewController: UIViewController {
         tableView.bounces = false
         tableView.showsVerticalScrollIndicator = false
         tableView.delaysContentTouches = false
-        tableView.isHidden = true
+//        tableView.isHidden = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -77,7 +77,7 @@ class MainViewController: UIViewController {
        let imageView = UIImageView()
         imageView.image = UIImage(named: "noTraining")
         imageView.contentMode = .scaleAspectFit
-//        imageView.isHidden = true
+        imageView.isHidden = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -99,9 +99,9 @@ class MainViewController: UIViewController {
     // MARK: - Actions
     @objc private func addWorkoutButtonAction() {
         print("🟢 addWorkoutButton did Tap in MainViewController")
-        let newWorkoutViewController = NewWorkoutViewController()
-        newWorkoutViewController.modalPresentationStyle = .fullScreen
-        present(newWorkoutViewController, animated: true)
+        let newWorkoutVC = NewWorkoutViewController()
+        newWorkoutVC.modalPresentationStyle = .fullScreen
+        present(newWorkoutVC, animated: true)
     }
     
     // MARK: - PrivateMethods
@@ -135,16 +135,25 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idWorkoutTableViewCell, for: indexPath) as! WorkoutTableViewCell
+        cell.cellDelegate = self
         return cell
     }
 }
 
 //MARK: - UITableViewDelegate
-
 extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
+    }
+}
+
+//MARK: - WorkoutTableViewCellDelegate
+extension MainViewController: WorkoutTableViewCellDelegate {
+    func startButtonDidTap() {
+        let startWorkoutVC = StartWorkoutViewController()
+        startWorkoutVC.modalPresentationStyle = .fullScreen
+        present(startWorkoutVC, animated: true)
     }
 }
 

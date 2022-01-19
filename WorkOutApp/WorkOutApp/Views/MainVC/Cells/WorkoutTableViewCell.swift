@@ -1,6 +1,12 @@
 import UIKit
 
+protocol WorkoutTableViewCellDelegate: AnyObject {
+    func startButtonDidTap()
+}
+
 class WorkoutTableViewCell: UITableViewCell {
+    
+    weak var cellDelegate: WorkoutTableViewCellDelegate?
     
     private let backgroundCell: UIView = {
         let view = UIView()
@@ -97,6 +103,7 @@ class WorkoutTableViewCell: UITableViewCell {
     
     @objc private func startButtonAction() {
         print("🟢 startButton did Tap in WorkoutTableViewCell")
+        cellDelegate?.startButtonDidTap()
     }
     
     private func setConstraints() {
