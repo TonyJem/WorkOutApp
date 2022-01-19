@@ -75,7 +75,7 @@ class NewWorkoutViewController: UIViewController {
     // MARK: - Actions
     @objc private func closeButtonAction() {
         print("🟢 closeButton did Tap in NewWorkoutViewController")
-//        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @objc private func saveButtonAction() {

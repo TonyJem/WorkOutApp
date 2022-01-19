@@ -9,8 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-//        window?.rootViewController = MainViewController()
-        window?.rootViewController = NewWorkoutViewController()
+        window?.rootViewController = MainViewController()
         window?.makeKeyAndVisible()
         window?.overrideUserInterfaceStyle = .light
     }
