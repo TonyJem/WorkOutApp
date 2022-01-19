@@ -46,6 +46,18 @@ class NewWorkoutViewController: UIViewController {
     
     private let repsOrTimerView = RepsOrTimerView()
     
+    private let saveButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .specialGreen
+        button.setTitle("SAVE", for: .normal)
+        button.titleLabel?.font = .robotoBold16()
+        button.tintColor = .white
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - LifeCycle
     override func viewDidLayoutSubviews() {
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
@@ -65,6 +77,16 @@ class NewWorkoutViewController: UIViewController {
 //        dismiss(animated: true, completion: nil)
     }
     
+    @objc private func saveButtonAction() {
+        print("🟢 SaveButton did Tap in NewWorkoutViewController")
+        
+        if dateAndRepeatView.repeatSwitch.isOn {
+            print("🟢🟢 repeatSwitch is ON in NewWorkoutViewController")
+        } else {
+            print("🔴🔴 repeatSwitch is OFF in NewWorkoutViewController")
+        }
+    }
+    
     // MARK: - Private Methods
     private func setupViews() {
         view.backgroundColor = .specialBackground
@@ -77,7 +99,7 @@ class NewWorkoutViewController: UIViewController {
         view.addSubview(dateAndRepeatView)
         view.addSubview(repsOrTimerLabel)
         view.addSubview(repsOrTimerView)
-        
+        view.addSubview(saveButton)
     }
     
     private func setDelegates() {
@@ -146,6 +168,13 @@ extension NewWorkoutViewController {
             repsOrTimerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             repsOrTimerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             repsOrTimerView.heightAnchor.constraint(equalToConstant: 320)
+        ])
+        
+        NSLayoutConstraint.activate([
+            saveButton.topAnchor.constraint(equalTo: repsOrTimerView.bottomAnchor, constant: 20),
+            saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            saveButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
 }
