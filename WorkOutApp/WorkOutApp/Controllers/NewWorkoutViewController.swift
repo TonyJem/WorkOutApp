@@ -21,6 +21,8 @@ class NewWorkoutViewController: UIViewController {
         return button
     }()
     
+    private let nameLabel = UILabel(text: "Name")
+    
     // MARK: - LifeCycle
     override func viewDidLayoutSubviews() {
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
@@ -45,6 +47,7 @@ class NewWorkoutViewController: UIViewController {
         
         view.addSubview(newWorkoutLabel)
         view.addSubview(closeButton)
+        view.addSubview(nameLabel)
     }
 }
 
@@ -62,6 +65,12 @@ extension NewWorkoutViewController {
             closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             closeButton.heightAnchor.constraint(equalToConstant: 30),
             closeButton.widthAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: newWorkoutLabel.bottomAnchor, constant: 10),
+            nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
 }
