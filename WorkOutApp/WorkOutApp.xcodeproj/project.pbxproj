@@ -32,6 +32,7 @@
 		3A78AB61279864240032270C /* StartWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB60279864240032270C /* StartWorkoutViewController.swift */; };
 		3AE8968527A54CFB00D2DE7B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE8968427A54CFB00D2DE7B /* Realm */; };
 		3AE8968727A54CFB00D2DE7B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE8968627A54CFB00D2DE7B /* RealmSwift */; };
+		3AE8968927A552E100D2DE7B /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8968827A552E100D2DE7B /* WorkoutModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		3A78AB5A2798079A0032270C /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		3A78AB5C279807A90032270C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3A78AB60279864240032270C /* StartWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutViewController.swift; sourceTree = "<group>"; };
+		3AE8968827A552E100D2DE7B /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		3A78AB32279456A10032270C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3AE8968827A552E100D2DE7B /* WorkoutModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A78AB3B279458F30032270C /* UIView + Extensions.swift in Sources */,
+				3AE8968927A552E100D2DE7B /* WorkoutModel.swift in Sources */,
 				3A78AB39279458DB0032270C /* UIFont + Extensions.swift in Sources */,
 				3A78AB50279752180032270C /* UILabel + Extensions.swift in Sources */,
 				3A78AB47279493B50032270C /* CalendarView.swift in Sources */,
