@@ -92,6 +92,12 @@ class MainViewController: UIViewController {
         userPhotoImageView.layer.cornerRadius = userPhotoImageView.frame.width / 2
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

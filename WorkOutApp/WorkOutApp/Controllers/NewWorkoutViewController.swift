@@ -86,7 +86,7 @@ class NewWorkoutViewController: UIViewController {
     
     @objc private func saveButtonAction() {
         print("🟢 SaveButton did Tap in NewWorkoutViewController")
-        
+        setModel()
         saveModel()
     }
     
