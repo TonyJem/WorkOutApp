@@ -1,11 +1,16 @@
 import UIKit
+import RealmSwift
 
 class MainViewController: UIViewController {
+    
+    private let localRealm = try! Realm()
+    private let idWorkoutTableViewCell = "idWorkoutTableViewCell"
+    
+    private var workoutArray: Results<WorkoutModel>! = nil
     
     // MARK: - Views
     private let calendarView = CalendarView()
     private let weatherView = WeatherView()
-    private let idWorkoutTableViewCell = "idWorkoutTableViewCell"
     
     private let userPhotoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -93,6 +98,7 @@ class MainViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        getWorkouts(date: Date())
         tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idWorkoutTableViewCell)
     }
     
@@ -123,6 +129,25 @@ class MainViewController: UIViewController {
         view.addSubview(tableView)
         view.addSubview(noWorkoutImageView)
     }
+    
+    private func getWorkouts(date: Date) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: date)
+        guard let weekday = components.weekday else { return }
+        
+        let dateStart = date
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1, second: -1)
+            return Calendar.current.date(byAdding: components, to: dateStart) ?? Date()
+        }()
+        
+        let predicateRepeat = NSPredicate(format: "workoutNumberOfDay = \(weekday) AND workoutRepeat = true")
+        let predicateUnrepeat = NSPredicate(format: "workoutRepeat = false AND workoutDate BETWEEN %@", [dateStart, dateEnd])
+        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
+        
+        workoutArray = localRealm.objects(WorkoutModel.self).filter(compound).sorted(byKeyPath: "workoutName")
+        tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -130,12 +155,14 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        workoutArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idWorkoutTableViewCell, for: indexPath) as! WorkoutTableViewCell
+        let model = workoutArray[indexPath.row]
         cell.cellDelegate = self
+        cell.cellConfigure(model: model)
         return cell
     }
 }

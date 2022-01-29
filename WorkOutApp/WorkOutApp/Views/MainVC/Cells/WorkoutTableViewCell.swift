@@ -106,6 +106,20 @@ class WorkoutTableViewCell: UITableViewCell {
         cellDelegate?.startButtonDidTap()
     }
     
+    func cellConfigure(model: WorkoutModel) {
+        workoutNameLabel.text = model.workoutName
+        
+        let (min, sec) = { (totalSeconds: Int) -> (Int, Int) in
+            return (totalSeconds / 60, totalSeconds % 60) }(Int(model.workoutTimer))
+        
+        workoutRepsLabel.text = (model.workoutTimer == 0 ? "Reps: \(model.workoutReps)" : "Timer: \(min) min \(sec) sec")
+        workoutSetsLabel.text = "Sets: \(model.workoutSets)"
+        
+        guard let imageData = model.workoutImage else { return }
+        guard let image = UIImage(data: imageData) else { return }
+        workoutImageView.image = image
+    }
+    
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
