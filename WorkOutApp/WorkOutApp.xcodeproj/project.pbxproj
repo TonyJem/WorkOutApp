@@ -33,6 +33,7 @@
 		3AE8968527A54CFB00D2DE7B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE8968427A54CFB00D2DE7B /* Realm */; };
 		3AE8968727A54CFB00D2DE7B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE8968627A54CFB00D2DE7B /* RealmSwift */; };
 		3AE8968927A552E100D2DE7B /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8968827A552E100D2DE7B /* WorkoutModel.swift */; };
+		3AE8968C27A562B000D2DE7B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8968B27A562B000D2DE7B /* RealmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		3A78AB5C279807A90032270C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3A78AB60279864240032270C /* StartWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutViewController.swift; sourceTree = "<group>"; };
 		3AE8968827A552E100D2DE7B /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
+		3AE8968B27A562B000D2DE7B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				3A78AB1C279410E80032270C /* WorkOutApp */,
+				3AE8968A27A5628F00D2DE7B /* Services */,
 				3A78AB1B279410E80032270C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -213,6 +216,14 @@
 			path = NewWorkoutVC;
 			sourceTree = "<group>";
 		};
+		3AE8968A27A5628F00D2DE7B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3AE8968B27A562B000D2DE7B /* RealmManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +308,7 @@
 				3A78AB39279458DB0032270C /* UIFont + Extensions.swift in Sources */,
 				3A78AB50279752180032270C /* UILabel + Extensions.swift in Sources */,
 				3A78AB47279493B50032270C /* CalendarView.swift in Sources */,
+				3AE8968C27A562B000D2DE7B /* RealmManager.swift in Sources */,
 				3A78AB3F279459210032270C /* UIStackView + Extensions.swift in Sources */,
 				3A78AB532797529D0032270C /* DateAndRepeatView.swift in Sources */,
 				3A78AB5D279807A90032270C /* ProfileViewController.swift in Sources */,
