@@ -11,7 +11,7 @@ class RepsOrTimerView: UIView {
         return label
     }()
     
-    private let numberOfSetLabel: UILabel = {
+    let numberOfSetLabel: UILabel = {
         let label = UILabel()
         label.text = "1"
         label.font = .robotoMedium24()
@@ -49,7 +49,7 @@ class RepsOrTimerView: UIView {
         return label
     }()
     
-    private let numberOfRepsLabel: UILabel = {
+    let numberOfRepsLabel: UILabel = {
         let label = UILabel()
         label.text = "1"
         label.font = .robotoMedium24()
@@ -78,7 +78,7 @@ class RepsOrTimerView: UIView {
         return label
     }()
     
-    private let numberOfTimerLabel: UILabel = {
+    let numberOfTimerLabel: UILabel = {
         let label = UILabel()
         label.text = "0 min"
         label.font = .robotoMedium24()

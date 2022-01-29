@@ -34,6 +34,7 @@
 		3AE8968727A54CFB00D2DE7B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE8968627A54CFB00D2DE7B /* RealmSwift */; };
 		3AE8968927A552E100D2DE7B /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8968827A552E100D2DE7B /* WorkoutModel.swift */; };
 		3AE8968C27A562B000D2DE7B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8968B27A562B000D2DE7B /* RealmManager.swift */; };
+		3AE8968E27A5707700D2DE7B /* SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8968D27A5707700D2DE7B /* SimpleAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		3A78AB60279864240032270C /* StartWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutViewController.swift; sourceTree = "<group>"; };
 		3AE8968827A552E100D2DE7B /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		3AE8968B27A562B000D2DE7B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		3AE8968D27A5707700D2DE7B /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				3A78AB45279493860032270C /* MainVC */,
 				3A78AB51279752700032270C /* NewWorkoutVC */,
+				3AE8968F27A5708600D2DE7B /* Alerts */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,6 +225,14 @@
 				3AE8968B27A562B000D2DE7B /* RealmManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		3AE8968F27A5708600D2DE7B /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				3AE8968D27A5707700D2DE7B /* SimpleAlert.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +330,7 @@
 				3A78AB572797E7080032270C /* NewWorkoutViewController.swift in Sources */,
 				3A78AB59279807230032270C /* MainTabBarController.swift in Sources */,
 				3A78AB55279753DE0032270C /* RepsOrTimerView.swift in Sources */,
+				3AE8968E27A5707700D2DE7B /* SimpleAlert.swift in Sources */,
 				3A78AB3D2794590A0032270C /* UIColor + Extensions.swift in Sources */,
 				3A78AB4A2794A3770032270C /* CalendarCollectionViewCell.swift in Sources */,
 				3A78AB5B2798079A0032270C /* StatisticViewController.swift in Sources */,

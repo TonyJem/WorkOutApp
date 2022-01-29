@@ -117,9 +117,28 @@ class NewWorkoutViewController: UIViewController {
     
     private func saveModel() {
         guard let text = nameTextField.text else { return }
-        let count = text.filter { $0.isNumber || $0.isLetter }.count
-        
-        
+        let count = text.filter{ $0.isNumber || $0.isLetter }.count
+
+        if count != 0 && workoutModel.workoutSets != 0 && (workoutModel.workoutReps != 0 || workoutModel.workoutTimer != 0) {
+            RealmManager.shared.saveWorkoutModel(model: workoutModel)
+            alertOk(title: "Success", message: nil)
+            workoutModel = WorkoutModel()
+            refreshWorkoutObjects()
+        } else {
+            alertOk(title: "Error", message: "Enter all parameters")
+        }
+    }
+    
+    private func refreshWorkoutObjects() {
+        dateAndRepeatView.datePicker.setDate(Date(), animated: true)
+        nameTextField.text = ""
+        dateAndRepeatView.repeatSwitch.isOn = true
+        repsOrTimerView.numberOfSetLabel.text = "0"
+        repsOrTimerView.setsSlider.value = 0
+        repsOrTimerView.numberOfRepsLabel.text = "0"
+        repsOrTimerView.repsSlider.value = 0
+        repsOrTimerView.numberOfTimerLabel.text = "0"
+        repsOrTimerView.timerSlider.value = 0
     }
     
     // MARK: - Private Methods
