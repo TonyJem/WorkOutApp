@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class NewWorkoutViewController: UIViewController {
     
@@ -46,6 +47,11 @@ class NewWorkoutViewController: UIViewController {
     
     private let repsOrTimerView = RepsOrTimerView()
     
+    private let localRealm = try! Realm()
+    private var workoutModel = WorkoutModel()
+    
+    private let testImage = UIImage(named: "workoutTestImage")
+    
     private let saveButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .specialGreen
@@ -90,6 +96,27 @@ class NewWorkoutViewController: UIViewController {
     
     @objc private func hideKeyboeard() {
         view.endEditing(true)
+    }
+    
+    private func setModel() {
+        guard let nameWorkout = nameTextField.text else { return }
+        workoutModel.workoutName = nameWorkout
+        
+        workoutModel.workoutDate = dateAndRepeatView.datePicker.date
+        
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: dateAndRepeatView.datePicker.date)
+        guard let weekday = components.weekday else { return }
+        workoutModel.wourkoutNumberOfDay = weekday
+        
+        workoutModel.workoutRepeat = dateAndRepeatView.repeatSwitch.isOn
+        
+        workoutModel.workoutSets = Int(repsOrTimerView.setsSlider.value)
+        workoutModel.workoutSets = Int(repsOrTimerView.repsSlider.value)
+        workoutModel.workoutSets = Int(repsOrTimerView.timerSlider.value)
+        
+        guard let imageData = testImage?.pngData() else { return }
+        workoutModel.workoutImage = imageData
     }
     
     // MARK: - Private Methods

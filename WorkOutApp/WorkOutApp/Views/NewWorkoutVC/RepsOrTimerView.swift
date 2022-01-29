@@ -20,7 +20,7 @@ class RepsOrTimerView: UIView {
         return label
     }()
     
-    private let setsSlider: UISlider = {
+    let setsSlider: UISlider = {
         let slider = UISlider()
         slider.minimumValue = 1
         slider.maximumValue = 50
@@ -58,7 +58,7 @@ class RepsOrTimerView: UIView {
         return label
     }()
     
-    private let repsSlider: UISlider = {
+    let repsSlider: UISlider = {
         let slider = UISlider()
         slider.minimumValue = 1
         slider.maximumValue = 50
@@ -87,7 +87,7 @@ class RepsOrTimerView: UIView {
         return label
     }()
     
-    private let timerSlider: UISlider = {
+    let timerSlider: UISlider = {
         let slider = UISlider()
         slider.minimumValue = 1
         slider.maximumValue = 600
