@@ -87,11 +87,7 @@ class NewWorkoutViewController: UIViewController {
     @objc private func saveButtonAction() {
         print("🟢 SaveButton did Tap in NewWorkoutViewController")
         
-        if dateAndRepeatView.repeatSwitch.isOn {
-            print("🟢🟢 repeatSwitch is ON in NewWorkoutViewController")
-        } else {
-            print("🔴🔴 repeatSwitch is OFF in NewWorkoutViewController")
-        }
+        saveModel()
     }
     
     @objc private func hideKeyboeard() {
@@ -107,7 +103,7 @@ class NewWorkoutViewController: UIViewController {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.weekday], from: dateAndRepeatView.datePicker.date)
         guard let weekday = components.weekday else { return }
-        workoutModel.wourkoutNumberOfDay = weekday
+        workoutModel.workoutNumberOfDay = weekday
         
         workoutModel.workoutRepeat = dateAndRepeatView.repeatSwitch.isOn
         
@@ -117,6 +113,13 @@ class NewWorkoutViewController: UIViewController {
         
         guard let imageData = testImage?.pngData() else { return }
         workoutModel.workoutImage = imageData
+    }
+    
+    private func saveModel() {
+        guard let text = nameTextField.text else { return }
+        let count = text.filter { $0.isNumber || $0.isLetter }.count
+        
+        
     }
     
     // MARK: - Private Methods
