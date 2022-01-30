@@ -175,7 +175,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idWorkoutTableViewCell, for: indexPath) as! WorkoutTableViewCell
         let model = workoutArray[indexPath.row]
-        cell.cellDelegate = self
+        cell.workTableViewCellDelegate = self
         cell.cellConfigure(model: model)
         return cell
     }
@@ -191,10 +191,16 @@ extension MainViewController: UITableViewDelegate {
 
 //MARK: - WorkoutTableViewCellDelegate
 extension MainViewController: WorkoutTableViewCellDelegate {
-    func startButtonDidTap() {
-        let startWorkoutVC = StartWorkoutViewController()
-        startWorkoutVC.modalPresentationStyle = .fullScreen
-        present(startWorkoutVC, animated: true)
+    func startButtonDidTap(model: WorkoutModel) {
+        
+        if model.workoutTimer == 0 {
+            let startWorkoutVC = StartWorkoutViewController()
+            startWorkoutVC.modalPresentationStyle = .fullScreen
+            startWorkoutVC.workoutModel = model
+            present(startWorkoutVC, animated: true)
+        } else {
+            print("🟢 Implement 'Show timer Screen' here...")
+        }
     }
 }
 
