@@ -38,6 +38,7 @@
 		3AE8969127A6621600D2DE7B /* WorkoutParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8969027A6621600D2DE7B /* WorkoutParametersView.swift */; };
 		3AE8969427A662DB00D2DE7B /* OkCancelAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8969327A662DB00D2DE7B /* OkCancelAlert.swift */; };
 		3AE8969627A6EBF500D2DE7B /* Date + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8969527A6EBF500D2DE7B /* Date + Extensions.swift */; };
+		3AE8969827A704B100D2DE7B /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8969727A704B100D2DE7B /* CustomAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		3AE8969027A6621600D2DE7B /* WorkoutParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutParametersView.swift; sourceTree = "<group>"; };
 		3AE8969327A662DB00D2DE7B /* OkCancelAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkCancelAlert.swift; sourceTree = "<group>"; };
 		3AE8969527A6EBF500D2DE7B /* Date + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extensions.swift"; sourceTree = "<group>"; };
+		3AE8969727A704B100D2DE7B /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			children = (
 				3AE8968D27A5707700D2DE7B /* SimpleAlert.swift */,
 				3AE8969327A662DB00D2DE7B /* OkCancelAlert.swift */,
+				3AE8969727A704B100D2DE7B /* CustomAlert.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				3A78AB4A2794A3770032270C /* CalendarCollectionViewCell.swift in Sources */,
 				3A78AB5B2798079A0032270C /* StatisticViewController.swift in Sources */,
 				3A78AB1E279410E80032270C /* AppDelegate.swift in Sources */,
+				3AE8969827A704B100D2DE7B /* CustomAlert.swift in Sources */,
 				3AE8969427A662DB00D2DE7B /* OkCancelAlert.swift in Sources */,
 				3A78AB20279410E80032270C /* SceneDelegate.swift in Sources */,
 			);
