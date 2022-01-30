@@ -2,6 +2,8 @@ import UIKit
 
 class StartWorkoutViewController: UIViewController {
     
+    let customAlert = CustomAlert()
+    
     var workoutModel = WorkoutModel()
     
     private var numberOfSet = 1
@@ -106,6 +108,12 @@ class StartWorkoutViewController: UIViewController {
 
 // MARK: - NextSetProtocol
 extension StartWorkoutViewController: NextSetProtocol {
+    
+    func editingTapped() {
+        customAlert.alertCustom(viewController: self) { _, _ in
+            print("1")
+        }
+    }
     
     func nextSetTapped() {
         if numberOfSet < workoutModel.workoutSets {
