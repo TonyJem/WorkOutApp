@@ -4,8 +4,6 @@ class StartWorkoutViewController: UIViewController {
     
     var workoutModel = WorkoutModel()
     
-    
-    
     private var numberOfSet = 1
     
     // MARK: - Views
@@ -61,6 +59,8 @@ class StartWorkoutViewController: UIViewController {
         
         setupViews()
         setConstraints()
+        setWorkoutParameters()
+        setDelegates()
     }
     
     // MARK: - Actions
@@ -97,6 +97,10 @@ class StartWorkoutViewController: UIViewController {
         workoutParametersView.workoutNameLabel.text = workoutModel.workoutName
         workoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(workoutModel.workoutSets)"
         workoutParametersView.numberOfRepsLabel.text = "\(workoutModel.workoutReps)"
+    }
+    
+    private func setDelegates() {
+        workoutParametersView.cellNextSetDelegate = self
     }
 }
 
