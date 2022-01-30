@@ -4,6 +4,14 @@ import RealmSwift
 class NewWorkoutViewController: UIViewController {
     
     // MARK: - Views
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.bounces = false
+        scrollView.delaysContentTouches = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
     private let newWorkoutLabel: UILabel = {
         let label = UILabel()
         label.text = "NEW WORKOUT"
@@ -145,6 +153,8 @@ class NewWorkoutViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .specialBackground
         
+        view.addSubview(scrollView)
+        
         view.addSubview(newWorkoutLabel)
         view.addSubview(closeButton)
         view.addSubview(nameLabel)
@@ -179,6 +189,14 @@ extension NewWorkoutViewController: UITextFieldDelegate {
 extension NewWorkoutViewController {
     
     private func setConstraints() {
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+        ])
+        
         NSLayoutConstraint.activate([
             newWorkoutLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             newWorkoutLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
