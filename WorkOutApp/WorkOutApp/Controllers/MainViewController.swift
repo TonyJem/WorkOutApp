@@ -6,7 +6,7 @@ class MainViewController: UIViewController {
     private let localRealm = try! Realm()
     private let idWorkoutTableViewCell = "idWorkoutTableViewCell"
     
-    private var workoutArray: Results<WorkoutModel>! = nil
+    private var workoutArray: Results<WorkoutModel>!
     
     // MARK: - Views
     private let calendarView = CalendarView()
@@ -121,6 +121,7 @@ class MainViewController: UIViewController {
     private func setDelegates() {
         tableView.delegate = self
         tableView.dataSource = self
+        calendarView.cellCollectionViewDelegate = self
     }
     
     private func setupViews() {
@@ -181,16 +182,31 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - UITableViewDelegate
+// MARK: - UITableViewDelegate
 extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action = UIContextualAction(style: .destructive, title: "") { _, _, _ in
+            let deleteModel = self.workoutArray[indexPath.row]
+            RealmManager.shared.deleteWorkoutModel(model: deleteModel)
+            tableView.reloadData()
+        }
+        
+        action.backgroundColor = .specialBackground
+        action.image = UIImage(named: "delete")
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 }
 
-//MARK: - WorkoutTableViewCellDelegate
+// MARK: - WorkoutTableViewCellDelegate
 extension MainViewController: WorkoutTableViewCellDelegate {
+    
     func startButtonDidTap(model: WorkoutModel) {
         
         if model.workoutTimer == 0 {
@@ -201,6 +217,14 @@ extension MainViewController: WorkoutTableViewCellDelegate {
         } else {
             print("🟢 Implement 'Show timer Screen' here...")
         }
+    }
+}
+
+// MARK: - SelectCollectionViewItemProtocol
+extension MainViewController: SelectCollectionViewItemProtocol {
+    
+    func selectItem(date: Date) {
+        getWorkouts(date: date)
     }
 }
 

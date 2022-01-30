@@ -28,7 +28,7 @@ class WorkoutTableViewCell: UITableViewCell {
     
     private let workoutImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "workoutTestImage")
+//        imageView.image = UIImage(named: "workoutTestImage")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -109,6 +109,8 @@ class WorkoutTableViewCell: UITableViewCell {
     }
     
     func cellConfigure(model: WorkoutModel) {
+        workoutModel = model
+        
         workoutNameLabel.text = model.workoutName
         
         let (min, sec) = { (totalSeconds: Int) -> (Int, Int) in

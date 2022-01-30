@@ -61,8 +61,6 @@ class StartWorkoutViewController: UIViewController {
         setConstraints()
         setWorkoutParameters()
         setDelegates()
-        
-        print("🟢🟢 Model: \(workoutModel)")
     }
     
     // MARK: - Actions

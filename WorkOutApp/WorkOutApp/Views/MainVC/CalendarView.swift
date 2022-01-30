@@ -1,6 +1,12 @@
 import UIKit
 
+protocol SelectCollectionViewItemProtocol: AnyObject {
+    func selectItem(date: Date)
+}
+
 class CalendarView: UIView {
+    
+    weak var cellCollectionViewDelegate: SelectCollectionViewItemProtocol?
     
     private let idCalendarCell = "idCalendarCell"
     
@@ -18,6 +24,7 @@ class CalendarView: UIView {
         setupViews()
         setConstraints()
         setDelegates()
+        
         collectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: idCalendarCell)
     }
     
@@ -74,6 +81,7 @@ extension CalendarView {
 
 //MARK: - UICollectionViewDataSource
 extension CalendarView: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         7
     }
@@ -95,13 +103,30 @@ extension CalendarView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("🟢 collectionView in MainViewController did tap")
+        
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let components = calendar.dateComponents([.month, .year], from: Date())
+        guard let month = components.month else { return }
+        guard let year = components.year else { return }
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell else { return }
+        guard let numberOfDayString = cell.numberOfDayLabel.text else { return }
+        guard let numberOfDay = Int(numberOfDayString) else { return }
+        
+        guard let date = formatter.date(from: "\(year)/\(month)/\(numberOfDay) 00:00") else { return }
+
+        cellCollectionViewDelegate?.selectItem(date: date)
     }
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
 extension CalendarView: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 34,
+        CGSize(width: collectionView.frame.width / 8,
                height: collectionView.frame.height)
     }
     

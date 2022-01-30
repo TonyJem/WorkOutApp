@@ -89,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				3A78AB1C279410E80032270C /* WorkOutApp */,
-				3AE8968A27A5628F00D2DE7B /* Services */,
 				3A78AB1B279410E80032270C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +108,7 @@
 				3A78AB32279456A10032270C /* Models */,
 				3A78AB34279456D20032270C /* Views */,
 				3A78AB33279456AA0032270C /* Controllers */,
+				3AE8968A27A5628F00D2DE7B /* Services */,
 				3A78AB35279457070032270C /* Extensions */,
 				3A78AB37279457350032270C /* Resources */,
 			);

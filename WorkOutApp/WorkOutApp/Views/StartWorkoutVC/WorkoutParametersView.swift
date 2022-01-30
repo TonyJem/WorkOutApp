@@ -128,7 +128,7 @@ class WorkoutParametersView: UIView {
     }
     
     @objc private func editingButtonTapped() {
-        print("editingButtonTapped")
+        print("🟢 editingButtonTapped")
     }
     
     @objc private func nextSetsButtonTapped() {
