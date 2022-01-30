@@ -73,7 +73,7 @@ class StartWorkoutViewController: UIViewController {
         print("🟢 finishButton did Tap in StartWorkoutViewController")
         if numberOfSet == workoutModel.workoutSets {
             dismiss(animated: true)
-            RealmManager.shared.updateWorkoutModel(model: workoutModel, bool: true)
+            RealmManager.shared.updateWorkoutModel(model: workoutModel, status: true)
         } else {
             alertOkCancel(title: "Warning", message: "You haven't finished your workout") {
                 self.dismiss(animated: true)
