@@ -45,7 +45,7 @@ extension Date {
         formatter.locale = Locale(identifier: "en_GB")
         formatter.dateFormat = "EEEEEE"
         
-        var weekArray : [[String]] = [[], []]
+        var weekArray: [[String]] = [[], []]
         let calendar = Calendar.current
         
         for index in -6...0 {
@@ -58,4 +58,3 @@ extension Date {
         return weekArray
     }
 }
-

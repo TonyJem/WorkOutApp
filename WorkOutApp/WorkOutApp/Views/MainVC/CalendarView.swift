@@ -45,26 +45,26 @@ class CalendarView: UIView {
         collectionView.delegate = self
     }
     
-    private func weekArray() -> [[String]] {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_GB")
-        dateFormatter.dateFormat = "EEEEEE"
-        
-        var weekArray : [[String]] = [[],[]]
-        let calendar = Calendar.current
-        let today = Date()
-        
-        for i in -6...0 {
-            let date = calendar.date(byAdding: .weekday, value: i, to: today)
-            guard let date = date else { return weekArray }
-            let components = calendar.dateComponents([.day], from: date)
-            weekArray[1].append(String(components.day ?? 0))
-            let weekDay = dateFormatter.string(from: date)
-            weekArray[0].append(String(weekDay))
-        }
-        return weekArray
-    }
+    //    private func weekArray() -> [[String]] {
+    //
+    //        let dateFormatter = DateFormatter()
+    //        dateFormatter.locale = Locale(identifier: "en_GB")
+    //        dateFormatter.dateFormat = "EEEEEE"
+    //
+    //        var weekArray : [[String]] = [[],[]]
+    //        let calendar = Calendar.current
+    //        let today = Date()
+    //
+    //        for i in -6...0 {
+    //            let date = calendar.date(byAdding: .weekday, value: i, to: today)
+    //            guard let date = date else { return weekArray }
+    //            let components = calendar.dateComponents([.day], from: date)
+    //            weekArray[1].append(String(components.day ?? 0))
+    //            let weekDay = dateFormatter.string(from: date)
+    //            weekArray[0].append(String(weekDay))
+    //        }
+    //        return weekArray
+    //    }
 }
 
 //MARK: - SetConstraints
@@ -88,8 +88,9 @@ extension CalendarView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCalendarCell, for: indexPath) as! CalendarCollectionViewCell
-        
-        cell.cellConfigure(weekArray: weekArray(), indexPath: indexPath)
+        let dateTimeZone = Date().localDate()
+        let weekArray = dateTimeZone.getWeekArray()
+        cell.cellConfigure(numberOfDay: weekArray[1][indexPath.item], dayOfWeek: weekArray[0][indexPath.item])
         
         if indexPath.item == 6 {
             collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .right)
@@ -102,23 +103,42 @@ extension CalendarView: UICollectionViewDataSource {
 extension CalendarView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("🟢 collectionView in MainViewController did tap")
         
-        let calendar = Calendar.current
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        let components = calendar.dateComponents([.month, .year], from: Date())
-        guard let month = components.month else { return }
-        guard let year = components.year else { return }
+        //        let calendar = Calendar.current
+        //        let formatter = DateFormatter()
+        //        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        //        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        //        let components = calendar.dateComponents([.month, .year], from: Date())
+        //        guard let month = components.month else { return }
+        //        guard let year = components.year else { return }
+        //
+        //        guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell else { return }
+        //        guard let numberOfDayString = cell.numberOfDayLabel.text else { return }
+        //        guard let numberOfDay = Int(numberOfDayString) else { return }
+        //
+        //        guard let date = formatter.date(from: "\(year)/\(month)/\(numberOfDay) 00:00") else { return }
+        //
+        //        cellCollectionViewDelegate?.selectItem(date: date)
         
-        guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell else { return }
-        guard let numberOfDayString = cell.numberOfDayLabel.text else { return }
-        guard let numberOfDay = Int(numberOfDayString) else { return }
+        let dateTimeZone = Date().localDate()
         
-        guard let date = formatter.date(from: "\(year)/\(month)/\(numberOfDay) 00:00") else { return }
-
-        cellCollectionViewDelegate?.selectItem(date: date)
+        switch indexPath.item {
+        case 0:
+            cellCollectionViewDelegate?.selectItem(date: dateTimeZone.offsetDays(days: 6))
+        case 1:
+            cellCollectionViewDelegate?.selectItem(date: dateTimeZone.offsetDays(days: 5))
+        case 2:
+            cellCollectionViewDelegate?.selectItem(date: dateTimeZone.offsetDays(days: 4))
+        case 3:
+            cellCollectionViewDelegate?.selectItem(date: dateTimeZone.offsetDays(days: 3))
+        case 4:
+            cellCollectionViewDelegate?.selectItem(date: dateTimeZone.offsetDays(days: 2))
+        case 5:
+            cellCollectionViewDelegate?.selectItem(date: dateTimeZone.offsetDays(days: 1))
+            // TODO: Avoid to use default <--- create enum for all possible cases
+        default:
+            cellCollectionViewDelegate?.selectItem(date: dateTimeZone.offsetDays(days: 0))
+        }
     }
 }
 
