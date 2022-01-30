@@ -116,8 +116,8 @@ class NewWorkoutViewController: UIViewController {
         workoutModel.workoutRepeat = dateAndRepeatView.repeatSwitch.isOn
         
         workoutModel.workoutSets = Int(repsOrTimerView.setsSlider.value)
-        workoutModel.workoutSets = Int(repsOrTimerView.repsSlider.value)
-        workoutModel.workoutSets = Int(repsOrTimerView.timerSlider.value)
+        workoutModel.workoutReps = Int(repsOrTimerView.repsSlider.value)
+        workoutModel.workoutTimer = Int(repsOrTimerView.timerSlider.value)
         
         guard let imageData = testImage?.pngData() else { return }
         workoutModel.workoutImage = imageData
