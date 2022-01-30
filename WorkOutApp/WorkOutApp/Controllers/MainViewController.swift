@@ -137,11 +137,18 @@ class MainViewController: UIViewController {
     }
     
     private func getWorkouts(date: Date) {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.weekday], from: date)
-        guard let weekday = components.weekday else { return }
         
-        let dateStart = date
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        let components = calendar.dateComponents([.weekday, .day, .month, .year], from: date)
+        guard let weekday = components.weekday else { return }
+        guard let day = components.day else { return }
+        guard let month = components.month else { return }
+        guard let year = components.year else { return }
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        
+        guard let dateStart = formatter.date(from: "\(year)/\(month)/\(day) 00:00") else { return }
         let dateEnd: Date = {
             let components = DateComponents(day: 1, second: -1)
             return Calendar.current.date(byAdding: components, to: dateStart) ?? Date()
@@ -154,6 +161,7 @@ class MainViewController: UIViewController {
         workoutArray = localRealm.objects(WorkoutModel.self).filter(compound).sorted(byKeyPath: "workoutName")
         tableView.reloadData()
     }
+    
 }
 
 // MARK: - UITableViewDataSource
