@@ -98,7 +98,11 @@ class NewWorkoutViewController: UIViewController {
         saveModel()
     }
     
-    @objc private func hideKeyboeard() {
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc private func swipeHideKeyboard() {
         view.endEditing(true)
     }
     
@@ -171,9 +175,13 @@ class NewWorkoutViewController: UIViewController {
     }
     
     private func addTaps() {
-        let tapScreen = UITapGestureRecognizer(target: self, action: #selector(hideKeyboeard))
+        let tapScreen = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         tapScreen.cancelsTouchesInView = false
         view.addGestureRecognizer(tapScreen)
+        
+        let swipeScreen = UISwipeGestureRecognizer(target: self, action: #selector(swipeHideKeyboard))
+        tapScreen.cancelsTouchesInView = false
+        view.addGestureRecognizer(swipeScreen)
     }
 }
 

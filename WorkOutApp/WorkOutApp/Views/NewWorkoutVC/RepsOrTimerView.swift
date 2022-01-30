@@ -13,7 +13,7 @@ class RepsOrTimerView: UIView {
     
     let numberOfSetLabel: UILabel = {
         let label = UILabel()
-        label.text = "1"
+        label.text = "0"
         label.font = .robotoMedium24()
         label.textColor = .specialGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +22,7 @@ class RepsOrTimerView: UIView {
     
     let setsSlider: UISlider = {
         let slider = UISlider()
-        slider.minimumValue = 1
+        slider.minimumValue = 0
         slider.maximumValue = 10
         slider.maximumTrackTintColor = .specialLightBrown
         slider.minimumTrackTintColor = .specialGreen
@@ -51,7 +51,7 @@ class RepsOrTimerView: UIView {
     
     let numberOfRepsLabel: UILabel = {
         let label = UILabel()
-        label.text = "1"
+        label.text = "0"
         label.font = .robotoMedium24()
         label.textColor = .specialGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +60,7 @@ class RepsOrTimerView: UIView {
     
     let repsSlider: UISlider = {
         let slider = UISlider()
-        slider.minimumValue = 1
+        slider.minimumValue = 0
         slider.maximumValue = 50
         slider.maximumTrackTintColor = .specialLightBrown
         slider.minimumTrackTintColor = .specialGreen
