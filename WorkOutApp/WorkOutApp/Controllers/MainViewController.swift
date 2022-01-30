@@ -1,5 +1,6 @@
 import UIKit
 import RealmSwift
+// TODO: Avoid importing RealmSwift in many places <-- need to find solution how to import it just in one place. May be do it in AppDelegate or etc file, and load DB on app launch
 
 class MainViewController: UIViewController {
     

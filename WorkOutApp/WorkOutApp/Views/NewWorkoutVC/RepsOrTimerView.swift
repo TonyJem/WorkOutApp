@@ -87,6 +87,7 @@ class RepsOrTimerView: UIView {
         return label
     }()
     
+    // TODO: Need to change in ALL project public lets like this to private and use public methods instead
     let timerSlider: UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0

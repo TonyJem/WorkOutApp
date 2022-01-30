@@ -1,4 +1,6 @@
 import UIKit
+// TODO: Try to remove yellow warnings
+// TODO: Try to remove errors in console
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
