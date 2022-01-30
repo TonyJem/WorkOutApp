@@ -159,15 +159,15 @@ class NewWorkoutViewController: UIViewController {
         
         view.addSubview(scrollView)
         
-        view.addSubview(newWorkoutLabel)
-        view.addSubview(closeButton)
-        view.addSubview(nameLabel)
-        view.addSubview(nameTextField)
-        view.addSubview(dateAndRepeatLabel)
-        view.addSubview(dateAndRepeatView)
-        view.addSubview(repsOrTimerLabel)
-        view.addSubview(repsOrTimerView)
-        view.addSubview(saveButton)
+        scrollView.addSubview(newWorkoutLabel)
+        scrollView.addSubview(closeButton)
+        scrollView.addSubview(nameLabel)
+        scrollView.addSubview(nameTextField)
+        scrollView.addSubview(dateAndRepeatLabel)
+        scrollView.addSubview(dateAndRepeatView)
+        scrollView.addSubview(repsOrTimerLabel)
+        scrollView.addSubview(repsOrTimerView)
+        scrollView.addSubview(saveButton)
     }
     
     private func setDelegates() {
