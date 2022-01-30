@@ -21,6 +21,14 @@ class StartWorkoutViewController: UIViewController {
         return button
     }()
     
+    private let sportmanImageView: UIImageView = {
+       let imageView = UIImageView()
+        imageView.image = UIImage(named: "sportsman")
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     // MARK: - LifeCycle
     override func viewDidLayoutSubviews() {
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
@@ -45,6 +53,7 @@ class StartWorkoutViewController: UIViewController {
         
         view.addSubview(newWorkoutLabel)
         view.addSubview(closeButton)
+        view.addSubview(sportmanImageView)
     }
 }
 
@@ -62,6 +71,13 @@ extension StartWorkoutViewController {
             closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             closeButton.heightAnchor.constraint(equalToConstant: 30),
             closeButton.widthAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
+            sportmanImageView.topAnchor.constraint(equalTo: newWorkoutLabel.bottomAnchor, constant: 20),
+            sportmanImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sportmanImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
+            sportmanImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7)
         ])
         
     }
