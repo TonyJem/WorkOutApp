@@ -28,7 +28,7 @@ class StartWorkoutViewController: UIViewController {
     }()
     
     private let sportmanImageView: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.image = UIImage(named: "sportsman")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +75,7 @@ class StartWorkoutViewController: UIViewController {
         print("🟢 finishButton did Tap in StartWorkoutViewController")
         if numberOfSet == workoutModel.workoutSets {
             dismiss(animated: true)
-            RealmManager.shared.updateWorkoutModel(model: workoutModel, status: true)
+            RealmManager.shared.updateStatusWorkoutModel(model: workoutModel, status: true)
         } else {
             alertOkCancel(title: "Warning", message: "You haven't finished your workout") {
                 self.dismiss(animated: true)
@@ -110,8 +110,12 @@ class StartWorkoutViewController: UIViewController {
 extension StartWorkoutViewController: NextSetProtocol {
     
     func editingTapped() {
-        customAlert.alertCustom(viewController: self) { _, _ in
-            print("1")
+        customAlert.alertCustom(viewController: self) { [self] sets, reps in
+            workoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(sets)"
+            workoutParametersView.numberOfRepsLabel.text = reps
+            guard let numberOfSets = Int(sets) else { return }
+            guard let numberOfReps = Int(reps) else { return }
+            RealmManager.shared.updateSetsRepsWorkoutModel(model: workoutModel, sets: numberOfSets, reps: numberOfReps)
         }
     }
     
