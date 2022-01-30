@@ -18,7 +18,7 @@ class WorkoutParametersView: UIView {
     }()
     
     private let setsLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Sets"
         label.textColor = .specialGray
         label.font = .robotoMedium18()
@@ -27,7 +27,7 @@ class WorkoutParametersView: UIView {
     }()
     
     let numberOfSetsLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "1/4"
         label.textColor = .specialGray
         label.font = .robotoMedium24()
@@ -36,14 +36,14 @@ class WorkoutParametersView: UIView {
     }()
     
     private let setsLineView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .specialLine
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private let repsLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Reps"
         label.textColor = .specialGray
         label.font = .robotoMedium18()
@@ -52,7 +52,7 @@ class WorkoutParametersView: UIView {
     }()
     
     let numberOfRepsLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "20"
         label.textColor = .specialGray
         label.font = .robotoMedium24()
@@ -61,7 +61,7 @@ class WorkoutParametersView: UIView {
     }()
     
     private let repsLineView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .specialLine
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -100,7 +100,7 @@ class WorkoutParametersView: UIView {
         setupViews()
         setConstraints()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -117,7 +117,7 @@ class WorkoutParametersView: UIView {
                                     spacing: 10)
         addSubview(setsStackView)
         addSubview(setsLineView)
- 
+        
         repsStackView = UIStackView(arrangedSubviews: [repsLabel, numberOfRepsLabel],
                                     axis: .horizontal,
                                     spacing: 10)
@@ -134,6 +134,10 @@ class WorkoutParametersView: UIView {
     @objc private func nextSetsButtonTapped() {
         cellNextSetDelegate?.nextSetTapped()
     }
+}
+
+// MARK: - SetConstraints
+extension WorkoutParametersView {
     
     private func setConstraints() {
         

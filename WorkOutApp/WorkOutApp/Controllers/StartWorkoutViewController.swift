@@ -4,7 +4,7 @@ class StartWorkoutViewController: UIViewController {
     
     var workoutModel = WorkoutModel()
     
-    private let workoutParametersView = WorkoutParametersView()
+    
     
     private var numberOfSet = 1
     
@@ -35,6 +35,10 @@ class StartWorkoutViewController: UIViewController {
         return imageView
     }()
     
+    private let detailsLabel = UILabel(text: "Details")
+    
+    private let workoutParametersView = WorkoutParametersView()
+    
     private let finishButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .specialGreen
@@ -46,8 +50,6 @@ class StartWorkoutViewController: UIViewController {
         button.addTarget(self, action: #selector(finishButtonAction), for: .touchUpInside)
         return button
     }()
-    
-    private let detailsLabel = UILabel(text: "Details")
     
     // MARK: - LifeCycle
     override func viewDidLayoutSubviews() {
@@ -87,8 +89,27 @@ class StartWorkoutViewController: UIViewController {
         view.addSubview(closeButton)
         view.addSubview(sportmanImageView)
         view.addSubview(detailsLabel)
-        
+        view.addSubview(workoutParametersView)
         view.addSubview(finishButton)
+    }
+    
+    private func setWorkoutParameters() {
+        workoutParametersView.workoutNameLabel.text = workoutModel.workoutName
+        workoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(workoutModel.workoutSets)"
+        workoutParametersView.numberOfRepsLabel.text = "\(workoutModel.workoutReps)"
+    }
+}
+
+// MARK: - NextSetProtocol
+extension StartWorkoutViewController: NextSetProtocol {
+    
+    func nextSetTapped() {
+        if numberOfSet < workoutModel.workoutSets {
+            numberOfSet += 1
+            workoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(workoutModel.workoutSets)"
+        } else {
+            alertOk(title: "Error", message: "Finish your workout")
+        }
     }
 }
 
@@ -121,6 +142,12 @@ extension StartWorkoutViewController {
             detailsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
+        NSLayoutConstraint.activate([
+            workoutParametersView.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor, constant: 5),
+            workoutParametersView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            workoutParametersView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            workoutParametersView.heightAnchor.constraint(equalToConstant: 230)
+        ])
         
         NSLayoutConstraint.activate([
             finishButton.topAnchor.constraint(equalTo: workoutParametersView.bottomAnchor, constant: 20),
