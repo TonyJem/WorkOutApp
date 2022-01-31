@@ -220,7 +220,10 @@ extension MainViewController: WorkoutTableViewCellDelegate {
             startWorkoutVC.workoutModel = model
             present(startWorkoutVC, animated: true)
         } else {
-            print("🟢 Implement 'Show timer Screen' here...")
+            let timerWorkoutViewController = TimerWorkoutViewController()
+            timerWorkoutViewController.modalPresentationStyle = .fullScreen
+            timerWorkoutViewController.workoutModel = model
+            present(timerWorkoutViewController, animated: true)
         }
     }
 }
