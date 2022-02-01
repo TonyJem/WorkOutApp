@@ -1,6 +1,6 @@
 import UIKit
 
-class StartWorkoutViewController: UIViewController {
+class RepsWorkoutViewController: UIViewController {
     
     let customAlert = CustomAlert()
     
@@ -107,7 +107,7 @@ class StartWorkoutViewController: UIViewController {
 }
 
 // MARK: - NextSetProtocol
-extension StartWorkoutViewController: NextSetProtocol {
+extension RepsWorkoutViewController: NextSetProtocol {
     
     func editingTapped() {
         customAlert.alertCustom(viewController: self) { [self] sets, reps in
@@ -130,7 +130,7 @@ extension StartWorkoutViewController: NextSetProtocol {
 }
 
 // MARK: - SetConstraints
-extension StartWorkoutViewController {
+extension RepsWorkoutViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([

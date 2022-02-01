@@ -215,7 +215,7 @@ extension MainViewController: WorkoutTableViewCellDelegate {
     func startButtonDidTap(model: WorkoutModel) {
         
         if model.workoutTimer == 0 {
-            let startWorkoutVC = StartWorkoutViewController()
+            let startWorkoutVC = RepsWorkoutViewController()
             startWorkoutVC.modalPresentationStyle = .fullScreen
             startWorkoutVC.workoutModel = model
             present(startWorkoutVC, animated: true)
