@@ -178,8 +178,19 @@ extension TimerWorkoutViewController: NextSetTimerProtocol {
     }
     
     func editingTimerTapped() {
-        print("🟢 editingTimerTapped() in TimerWorkoutViewController")
+        customAlert.alertCustom(viewController: self, repsOrTimer: "Timer of set") { [self] sets, timerOfset in
 
+            if sets != "" && timerOfset != "" {
+                guard let numberOfSets = Int(sets) else { return }
+                guard let numberOfTimer = Int(timerOfset) else { return }
+                let (min, sec) = numberOfTimer.convertSeconds()
+                timerWorkoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(sets)"
+                timerWorkoutParametersView.numberOfTimerLabel.text = "\(min) min \(sec) sec"
+                timerLabel.text = "\(min):\(sec.setZeroForSeconds())"
+                durationTimer = numberOfTimer
+                RealmManager.shared.updateSetsTimerWorkoutModel(model: workoutModel, sets: numberOfSets, timer: numberOfTimer)
+            }
+        }
     }
 }
 

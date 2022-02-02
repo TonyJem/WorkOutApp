@@ -16,25 +16,32 @@ class CustomAlert {
         return view
     }()
     
+    private let scrollView = UIScrollView()
+    
     private var mainView: UIView?
     private let setsTextField = UITextField()
     private let repsTextField = UITextField()
     
     var buttonAction: ( (String, String) -> Void)?
     
-    func alertCustom(viewController: UIViewController, completion: @escaping (String, String) -> Void) {
+    func alertCustom(viewController: UIViewController, repsOrTimer: String, completion: @escaping (String, String) -> Void) {
+        
+        registerForKeyboardNotification()
         
         guard let parentView = viewController.view else { return }
         mainView = parentView
         
+        scrollView.frame = parentView.frame
+        parentView.addSubview(scrollView)
+        
         backgroundView.frame = parentView.frame
-        parentView.addSubview(backgroundView)
+        scrollView.addSubview(backgroundView)
         
         alertView.frame = CGRect(x: 40,
                                  y: -420,
                                  width: parentView.frame.width - 80,
                                  height: 420)
-        parentView.addSubview(alertView)
+        scrollView.addSubview(alertView)
         
         let sportsmanImageView = UIImageView(frame: CGRect(x: (alertView.frame.width - alertView.frame.height * 0.4) / 2,
                                                            y: 30,
@@ -77,16 +84,16 @@ class CustomAlert {
         setsTextField.keyboardType = .numberPad
         alertView.addSubview(setsTextField)
         
-        let repsLabel = UILabel(text: "Reps")
-        repsLabel.translatesAutoresizingMaskIntoConstraints = true
-        repsLabel.frame = CGRect(x: 30,
+        let repsOrTimerLabel = UILabel(text: "\(repsOrTimer)")
+        repsOrTimerLabel.translatesAutoresizingMaskIntoConstraints = true
+        repsOrTimerLabel.frame = CGRect(x: 30,
                                  y: setsTextField.frame.maxY + 3,
                                  width: alertView.frame.width - 60,
                                  height: 20)
-        alertView.addSubview(repsLabel)
+        alertView.addSubview(repsOrTimerLabel)
         
         repsTextField.frame = CGRect(x: 20,
-                                     y: repsLabel.frame.maxY,
+                                     y: repsOrTimerLabel.frame.maxY,
                                      width: alertView.frame.width - 40,
                                      height: 30)
         repsTextField.backgroundColor = .specialBrown
@@ -139,13 +146,36 @@ class CustomAlert {
             if done {
                 UIView.animate(withDuration: 0.3) {
                     self.backgroundView.alpha = 0
-                } completion: { done in
+                    // TODO: need to reado ARC - Automatic Reference Counting and why do we need weak self here
+                } completion: { [weak self] done in
+                    guard let self = self else { return }
                     if done {
                         self.alertView.removeFromSuperview()
                         self.backgroundView.removeFromSuperview()
+                        self.scrollView.removeFromSuperview()
+                        self.removeForKeyboardNotification()
                     }
                 }
             }
         }
+    }
+    
+    private func registerForKeyboardNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func removeForKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func kbWillShow() {
+        scrollView.contentOffset = CGPoint(x: 0, y: 100)
+    }
+    
+    @objc private func kbWillHide() {
+        scrollView.contentOffset = CGPoint.zero
     }
 }
