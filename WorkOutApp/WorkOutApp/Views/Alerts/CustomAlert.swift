@@ -154,6 +154,8 @@ class CustomAlert {
                         self.backgroundView.removeFromSuperview()
                         self.scrollView.removeFromSuperview()
                         self.removeForKeyboardNotification()
+                        self.setsTextField.text = ""
+                        self.repsTextField.text = ""
                     }
                 }
             }
