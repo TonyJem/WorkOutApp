@@ -29,6 +29,8 @@ class StatisticViewController: UIViewController {
         return segmentedControl
     }()
     
+    private let exercisesLabel = UILabel(text: "Exercises")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +47,7 @@ class StatisticViewController: UIViewController {
         
         view.addSubview(statisticLabel)
         view.addSubview(segmentedControl)
+        view.addSubview(exercisesLabel)
     }
 }
 
@@ -60,6 +63,12 @@ extension StatisticViewController {
             segmentedControl.topAnchor.constraint(equalTo: statisticLabel.bottomAnchor, constant: 10),
             segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            exercisesLabel.topAnchor.constraint(equalTo: statisticLabel.bottomAnchor, constant: 50),
+            exercisesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            exercisesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
 }
