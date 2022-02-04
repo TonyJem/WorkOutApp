@@ -1,5 +1,11 @@
 import UIKit
 
+struct DifferenceWorkout {
+    let name: String
+    let lastReps: Int
+    let firstReps: Int
+}
+
 class StatisticViewController: UIViewController {
     
     private let statisticLabel: UILabel = {

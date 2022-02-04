@@ -42,6 +42,7 @@
 		3AE8969A27A87A9500D2DE7B /* TimerWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8969927A87A9500D2DE7B /* TimerWorkoutViewController.swift */; };
 		3AE8969C27A87B1300D2DE7B /* TimerWorkoutParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8969B27A87B1300D2DE7B /* TimerWorkoutParametersView.swift */; };
 		3AE8969F27A87C0B00D2DE7B /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8969E27A87C0B00D2DE7B /* Int + Extensions.swift */; };
+		3AE896A127ADACD900D2DE7B /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE896A027ADACD800D2DE7B /* StatisticTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		3AE8969927A87A9500D2DE7B /* TimerWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWorkoutViewController.swift; sourceTree = "<group>"; };
 		3AE8969B27A87B1300D2DE7B /* TimerWorkoutParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWorkoutParametersView.swift; sourceTree = "<group>"; };
 		3AE8969E27A87C0B00D2DE7B /* Int + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
+		3AE896A027ADACD800D2DE7B /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				3A78AB51279752700032270C /* NewWorkoutVC */,
 				3AE8969227A6622600D2DE7B /* StartWorkoutVC */,
 				3AE8969D27A87B3A00D2DE7B /* TimerWorkoutVC */,
+				3AE896A227ADACF500D2DE7B /* StatisticVC */,
 				3AE8968F27A5708600D2DE7B /* Alerts */,
 			);
 			path = Views;
@@ -272,6 +275,22 @@
 			path = TimerWorkoutVC;
 			sourceTree = "<group>";
 		};
+		3AE896A227ADACF500D2DE7B /* StatisticVC */ = {
+			isa = PBXGroup;
+			children = (
+				3AE896A327ADAD1900D2DE7B /* Cells */,
+				3AE896A027ADACD800D2DE7B /* StatisticTableViewCell.swift */,
+			);
+			path = StatisticVC;
+			sourceTree = "<group>";
+		};
+		3AE896A327ADAD1900D2DE7B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -377,6 +396,7 @@
 				3A78AB4A2794A3770032270C /* CalendarCollectionViewCell.swift in Sources */,
 				3A78AB5B2798079A0032270C /* StatisticViewController.swift in Sources */,
 				3A78AB1E279410E80032270C /* AppDelegate.swift in Sources */,
+				3AE896A127ADACD900D2DE7B /* StatisticTableViewCell.swift in Sources */,
 				3AE8969827A704B100D2DE7B /* CustomAlert.swift in Sources */,
 				3AE8969427A662DB00D2DE7B /* OkCancelAlert.swift in Sources */,
 				3A78AB20279410E80032270C /* SceneDelegate.swift in Sources */,
