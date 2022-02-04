@@ -95,6 +95,17 @@ class StatisticViewController: UIViewController {
     }
     
     @objc private func segmentChanged() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            differenceArray = [DifferenceWorkout]()
+            let dateStart = dateToday.offsetDays(days: 7)
+            getDifferenceModel(dateStart: dateStart)
+            tableView.reloadData()
+        } else {
+            differenceArray = [DifferenceWorkout]()
+            let dateStart = dateToday.offsetMonth(month: 1)
+            getDifferenceModel(dateStart: dateStart)
+            tableView.reloadData()
+        }
     }
     
     private func getWorkoutsName() -> [String] {
