@@ -45,6 +45,8 @@
 		3AE896A127ADACD900D2DE7B /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE896A027ADACD800D2DE7B /* StatisticTableViewCell.swift */; };
 		3AE896A527ADB35200D2DE7B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE896A427ADB35200D2DE7B /* UserModel.swift */; };
 		3AE896A727ADB38C00D2DE7B /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE896A627ADB38C00D2DE7B /* ProfileCollectionViewCell.swift */; };
+		3AE896AA27ADB4B300D2DE7B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE896A927ADB4B300D2DE7B /* SettingViewController.swift */; };
+		3AE896AC27ADB61B00D2DE7B /* GallaryOrPhotoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE896AB27ADB61B00D2DE7B /* GallaryOrPhotoAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		3AE896A027ADACD800D2DE7B /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 		3AE896A427ADB35200D2DE7B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3AE896A627ADB38C00D2DE7B /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AE896A927ADB4B300D2DE7B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		3AE896AB27ADB61B00D2DE7B /* GallaryOrPhotoAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryOrPhotoAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 				3AE8969927A87A9500D2DE7B /* TimerWorkoutViewController.swift */,
 				3A78AB5A2798079A0032270C /* StatisticViewController.swift */,
 				3A78AB5C279807A90032270C /* ProfileViewController.swift */,
+				3AE896A927ADB4B300D2DE7B /* SettingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				3AE8968D27A5707700D2DE7B /* SimpleAlert.swift */,
 				3AE8969327A662DB00D2DE7B /* OkCancelAlert.swift */,
 				3AE8969727A704B100D2DE7B /* CustomAlert.swift */,
+				3AE896AB27ADB61B00D2DE7B /* GallaryOrPhotoAlert.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				3A78AB4E27974BEE0032270C /* WorkoutTableViewCell.swift in Sources */,
 				3A78AB22279410E80032270C /* MainViewController.swift in Sources */,
 				3A78AB4C279746FD0032270C /* WeatherView.swift in Sources */,
+				3AE896AC27ADB61B00D2DE7B /* GallaryOrPhotoAlert.swift in Sources */,
 				3A78AB61279864240032270C /* RepsWorkoutViewController.swift in Sources */,
 				3A78AB572797E7080032270C /* NewWorkoutViewController.swift in Sources */,
 				3A78AB59279807230032270C /* MainTabBarController.swift in Sources */,
@@ -407,6 +414,7 @@
 				3AE8968E27A5707700D2DE7B /* SimpleAlert.swift in Sources */,
 				3AE896A527ADB35200D2DE7B /* UserModel.swift in Sources */,
 				3AE8969F27A87C0B00D2DE7B /* Int + Extensions.swift in Sources */,
+				3AE896AA27ADB4B300D2DE7B /* SettingViewController.swift in Sources */,
 				3A78AB3D2794590A0032270C /* UIColor + Extensions.swift in Sources */,
 				3AE8969127A6621600D2DE7B /* WorkoutParametersView.swift in Sources */,
 				3A78AB4A2794A3770032270C /* CalendarCollectionViewCell.swift in Sources */,

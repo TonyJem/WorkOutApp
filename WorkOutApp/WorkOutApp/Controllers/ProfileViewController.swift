@@ -8,9 +8,9 @@ struct ResultWorkout {
 }
 
 class ProfileViewController: UIViewController {
-
+    
     private let profileLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "PROFILE"
         label.font = .robotoMedium24()
         label.textColor = .specialGray
@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController {
     }()
     
     private let userNameLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "YOUR NAME"
         label.font = .robotoBold24()
         label.textColor = .white
@@ -89,7 +89,7 @@ class ProfileViewController: UIViewController {
     }()
     
     private let targetLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "TARGET: 0 workouts"
         label.font = .robotoBold16()
         label.textColor = .specialGray
@@ -98,7 +98,7 @@ class ProfileViewController: UIViewController {
     }()
     
     private let workoutsNowLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "0"
         label.font = .robotoBold24()
         label.textColor = .specialGray
@@ -107,7 +107,7 @@ class ProfileViewController: UIViewController {
     }()
     
     private let workoutsTargetLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "0"
         label.font = .robotoBold24()
         label.textColor = .specialGray
@@ -140,7 +140,7 @@ class ProfileViewController: UIViewController {
     private var userParamStackView = UIStackView()
     
     private let idProfileCollectionViewCell = "idProfileCollectionViewCell"
-
+    
     private let localRealm = try! Realm()
     private var workoutArray: Results<WorkoutModel>!
     private var userArray: Results<UserModel>!
@@ -156,12 +156,12 @@ class ProfileViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         userPhotoImageView.layer.cornerRadius = userPhotoImageView.frame.height / 2
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         userArray = localRealm.objects(UserModel.self)
-
+        
         setupViews()
         setConstraints()
         setDelegates()
@@ -189,8 +189,8 @@ class ProfileViewController: UIViewController {
         view.addSubview(targetLabel)
         
         targetStackView = UIStackView(arrangedSubviews: [workoutsNowLabel, workoutsTargetLabel],
-                                         axis: .horizontal,
-                                         spacing: 10)
+                                      axis: .horizontal,
+                                      spacing: 10)
         view.addSubview(targetStackView)
         view.addSubview(targetView)
         
@@ -203,10 +203,9 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func editingButtonTap() {
-
-        
-        
-        
+        let settingViewController = SettingViewController()
+        settingViewController.modalPresentationStyle = .fullScreen
+        present(settingViewController, animated: true)
     }
     
     private func setupUserParameters() {
@@ -216,7 +215,7 @@ class ProfileViewController: UIViewController {
             userWeightLabel.text = "Weight: \(userArray[0].userWeight)"
             targetLabel.text = "TARGET: \(userArray[0].userTarget) workouts"
             workoutsTargetLabel.text = "\(userArray[0].userTarget)"
-        
+            
             guard let data = userArray[0].userImage else { return }
             guard let image = UIImage(data: data) else { return }
             userPhotoImageView.image = image
@@ -279,7 +278,7 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
         CGSize(width: collectionView.frame.width / 2.07,
                height: 120)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         5
     }
