@@ -43,6 +43,8 @@
 		3AE8969C27A87B1300D2DE7B /* TimerWorkoutParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8969B27A87B1300D2DE7B /* TimerWorkoutParametersView.swift */; };
 		3AE8969F27A87C0B00D2DE7B /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8969E27A87C0B00D2DE7B /* Int + Extensions.swift */; };
 		3AE896A127ADACD900D2DE7B /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE896A027ADACD800D2DE7B /* StatisticTableViewCell.swift */; };
+		3AE896A527ADB35200D2DE7B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE896A427ADB35200D2DE7B /* UserModel.swift */; };
+		3AE896A727ADB38C00D2DE7B /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE896A627ADB38C00D2DE7B /* ProfileCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		3AE8969B27A87B1300D2DE7B /* TimerWorkoutParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWorkoutParametersView.swift; sourceTree = "<group>"; };
 		3AE8969E27A87C0B00D2DE7B /* Int + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
 		3AE896A027ADACD800D2DE7B /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
+		3AE896A427ADB35200D2DE7B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		3AE896A627ADB38C00D2DE7B /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				3AE8968827A552E100D2DE7B /* WorkoutModel.swift */,
+				3AE896A427ADB35200D2DE7B /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				3AE8969227A6622600D2DE7B /* StartWorkoutVC */,
 				3AE8969D27A87B3A00D2DE7B /* TimerWorkoutVC */,
 				3AE896A227ADACF500D2DE7B /* StatisticVC */,
+				3AE896A827ADB3A300D2DE7B /* ProfileVC */,
 				3AE8968F27A5708600D2DE7B /* Alerts */,
 			);
 			path = Views;
@@ -291,6 +297,14 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		3AE896A827ADB3A300D2DE7B /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				3AE896A627ADB38C00D2DE7B /* ProfileCollectionViewCell.swift */,
+			);
+			path = ProfileVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,8 +402,10 @@
 				3A78AB61279864240032270C /* RepsWorkoutViewController.swift in Sources */,
 				3A78AB572797E7080032270C /* NewWorkoutViewController.swift in Sources */,
 				3A78AB59279807230032270C /* MainTabBarController.swift in Sources */,
+				3AE896A727ADB38C00D2DE7B /* ProfileCollectionViewCell.swift in Sources */,
 				3A78AB55279753DE0032270C /* RepsOrTimerView.swift in Sources */,
 				3AE8968E27A5707700D2DE7B /* SimpleAlert.swift in Sources */,
+				3AE896A527ADB35200D2DE7B /* UserModel.swift in Sources */,
 				3AE8969F27A87C0B00D2DE7B /* Int + Extensions.swift in Sources */,
 				3A78AB3D2794590A0032270C /* UIColor + Extensions.swift in Sources */,
 				3AE8969127A6621600D2DE7B /* WorkoutParametersView.swift in Sources */,
