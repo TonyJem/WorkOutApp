@@ -31,6 +31,17 @@ class StatisticViewController: UIViewController {
     
     private let exercisesLabel = UILabel(text: "Exercises")
     
+    private let tableView: UITableView = {
+       let tableView = UITableView()
+        tableView.backgroundColor = .none
+        tableView.separatorStyle = .none
+        tableView.bounces = false
+        tableView.showsVerticalScrollIndicator = false
+//        tableView.delaysContentTouches = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +59,7 @@ class StatisticViewController: UIViewController {
         view.addSubview(statisticLabel)
         view.addSubview(segmentedControl)
         view.addSubview(exercisesLabel)
+        view.addSubview(tableView)
     }
 }
 
@@ -69,6 +81,13 @@ extension StatisticViewController {
             exercisesLabel.topAnchor.constraint(equalTo: statisticLabel.bottomAnchor, constant: 50),
             exercisesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             exercisesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: exercisesLabel.bottomAnchor, constant: 0),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
 }
