@@ -111,10 +111,6 @@ class NewWorkoutViewController: UIViewController {
         workoutModel.workoutName = nameWorkout
         
         workoutModel.workoutDate = dateAndRepeatView.datePicker.date.localDate()
-        
-//        let calendar = Calendar.current
-//        let components = calendar.dateComponents([.weekday], from: dateAndRepeatView.datePicker.date)
-//        guard let weekday = components.weekday else { return }
         workoutModel.workoutNumberOfDay = dateAndRepeatView.datePicker.date.getWeekdayNumber()
         
         workoutModel.workoutRepeat = dateAndRepeatView.repeatSwitch.isOn
