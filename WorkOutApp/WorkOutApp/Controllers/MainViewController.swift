@@ -83,7 +83,7 @@ class MainViewController: UIViewController {
        let imageView = UIImageView()
         imageView.image = UIImage(named: "noTraining")
         imageView.contentMode = .scaleAspectFit
-        imageView.isHidden = true
+//        imageView.isHidden = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -139,22 +139,6 @@ class MainViewController: UIViewController {
     }
     
     private func getWorkouts(date: Date) {
-        
-//        let calendar = Calendar.current
-//        let formatter = DateFormatter()
-//        let components = calendar.dateComponents([.weekday, .day, .month, .year], from: date)
-//        guard let weekday = components.weekday else { return }
-//        guard let day = components.day else { return }
-//        guard let month = components.month else { return }
-//        guard let year = components.year else { return }
-//        formatter.timeZone = TimeZone(abbreviation: "UTC")
-//        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-//
-//        guard let dateStart = formatter.date(from: "\(year)/\(month)/\(day) 00:00") else { return }
-//        let dateEnd: Date = {
-//            let components = DateComponents(day: 1, second: -1)
-//            return Calendar.current.date(byAdding: components, to: dateStart) ?? Date()
-//        }()
         let dateTimeZone = date.localDate()
         let weekday = dateTimeZone.getWeekdayNumber()
         let dateStart = dateTimeZone.startEndDate().0
@@ -165,9 +149,21 @@ class MainViewController: UIViewController {
         let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
         
         workoutArray = localRealm.objects(WorkoutModel.self).filter(compound).sorted(byKeyPath: "workoutName")
+        
+        checkWorkoutsToday()
         tableView.reloadData()
     }
     
+    private func checkWorkoutsToday() {
+        if workoutArray.count == 0 {
+            tableView.isHidden = true
+            noWorkoutImageView.isHidden = false
+        } else {
+            tableView.isHidden = false
+            noWorkoutImageView.isHidden = true
+            tableView.reloadData()
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
