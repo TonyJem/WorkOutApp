@@ -1,4 +1,3 @@
-import Foundation
 import UserNotifications
 import UIKit
 
@@ -15,7 +14,7 @@ class Notifications: NSObject {
     
     func getNotificationSettings() {
         notificationCenter.getNotificationSettings { setting in
-            print(setting)
+            print("🟢 getNotificationSetting \(setting)")
         }
     }
     
@@ -30,8 +29,8 @@ class Notifications: NSObject {
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(abbreviation: "UTC")!
         var triggerDate = calendar.dateComponents([.year, .month, .day], from: date)
-        triggerDate.hour = 21
-        triggerDate.minute = 40
+        triggerDate.hour = 20
+        triggerDate.minute = 45
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
         
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
@@ -43,7 +42,7 @@ class Notifications: NSObject {
 
 extension Notifications: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
+        completionHandler([.banner, .list, .sound])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
