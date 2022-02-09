@@ -30,6 +30,7 @@
 		3A78AB5B2798079A0032270C /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB5A2798079A0032270C /* StatisticViewController.swift */; };
 		3A78AB5D279807A90032270C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB5C279807A90032270C /* ProfileViewController.swift */; };
 		3A78AB61279864240032270C /* RepsWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78AB60279864240032270C /* RepsWorkoutViewController.swift */; };
+		3AAAFA0927B43D4200839670 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAAFA0827B43D4100839670 /* Notifications.swift */; };
 		3AE8968527A54CFB00D2DE7B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE8968427A54CFB00D2DE7B /* Realm */; };
 		3AE8968727A54CFB00D2DE7B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE8968627A54CFB00D2DE7B /* RealmSwift */; };
 		3AE8968927A552E100D2DE7B /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8968827A552E100D2DE7B /* WorkoutModel.swift */; };
@@ -77,6 +78,7 @@
 		3A78AB5A2798079A0032270C /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		3A78AB5C279807A90032270C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3A78AB60279864240032270C /* RepsWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsWorkoutViewController.swift; sourceTree = "<group>"; };
+		3AAAFA0827B43D4100839670 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		3AE8968827A552E100D2DE7B /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		3AE8968B27A562B000D2DE7B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		3AE8968D27A5707700D2DE7B /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				3A78AB1D279410E80032270C /* AppDelegate.swift */,
 				3A78AB1F279410E80032270C /* SceneDelegate.swift */,
+				3AAAFA0827B43D4100839670 /* Notifications.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				3A78AB39279458DB0032270C /* UIFont + Extensions.swift in Sources */,
 				3A78AB50279752180032270C /* UILabel + Extensions.swift in Sources */,
 				3A78AB47279493B50032270C /* CalendarView.swift in Sources */,
+				3AAAFA0927B43D4200839670 /* Notifications.swift in Sources */,
 				3AE8968C27A562B000D2DE7B /* RealmManager.swift in Sources */,
 				3AE8969A27A87A9500D2DE7B /* TimerWorkoutViewController.swift in Sources */,
 				3AE8969627A6EBF500D2DE7B /* Date + Extensions.swift in Sources */,
