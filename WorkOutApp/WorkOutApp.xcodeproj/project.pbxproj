@@ -33,6 +33,7 @@
 		3AAAFA0927B43D4200839670 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAAFA0827B43D4100839670 /* Notifications.swift */; };
 		3AAAFA0B27B5AAF100839670 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAAFA0A27B5AAF100839670 /* WeatherModel.swift */; };
 		3AAAFA0E27B6EC2800839670 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAAFA0D27B6EC2800839670 /* NetworkRequest.swift */; };
+		3AAAFA1027B6EC6E00839670 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAAFA0F27B6EC6E00839670 /* NetworkDataFetch.swift */; };
 		3AE8968527A54CFB00D2DE7B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE8968427A54CFB00D2DE7B /* Realm */; };
 		3AE8968727A54CFB00D2DE7B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE8968627A54CFB00D2DE7B /* RealmSwift */; };
 		3AE8968927A552E100D2DE7B /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8968827A552E100D2DE7B /* WorkoutModel.swift */; };
@@ -83,6 +84,7 @@
 		3AAAFA0827B43D4100839670 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		3AAAFA0A27B5AAF100839670 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		3AAAFA0D27B6EC2800839670 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		3AAAFA0F27B6EC6E00839670 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		3AE8968827A552E100D2DE7B /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		3AE8968B27A562B000D2DE7B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		3AE8968D27A5707700D2DE7B /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				3AAAFA0D27B6EC2800839670 /* NetworkRequest.swift */,
+				3AAAFA0F27B6EC6E00839670 /* NetworkDataFetch.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				3AE8969427A662DB00D2DE7B /* OkCancelAlert.swift in Sources */,
 				3A78AB20279410E80032270C /* SceneDelegate.swift in Sources */,
 				3AE896B027B1AB0E00D2DE7B /* OnboardingCollectionViewCell.swift in Sources */,
+				3AAAFA1027B6EC6E00839670 /* NetworkDataFetch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
