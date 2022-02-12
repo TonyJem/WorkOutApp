@@ -1,6 +1,7 @@
 import UIKit
 // TODO: Try to remove yellow warnings
 // TODO: Try to remove errors in console
+// TODO: Add swiftLint
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
