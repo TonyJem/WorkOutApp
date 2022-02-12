@@ -44,27 +44,6 @@ class CalendarView: UIView {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-    
-    //    private func weekArray() -> [[String]] {
-    //
-    //        let dateFormatter = DateFormatter()
-    //        dateFormatter.locale = Locale(identifier: "en_GB")
-    //        dateFormatter.dateFormat = "EEEEEE"
-    //
-    //        var weekArray : [[String]] = [[],[]]
-    //        let calendar = Calendar.current
-    //        let today = Date()
-    //
-    //        for i in -6...0 {
-    //            let date = calendar.date(byAdding: .weekday, value: i, to: today)
-    //            guard let date = date else { return weekArray }
-    //            let components = calendar.dateComponents([.day], from: date)
-    //            weekArray[1].append(String(components.day ?? 0))
-    //            let weekDay = dateFormatter.string(from: date)
-    //            weekArray[0].append(String(weekDay))
-    //        }
-    //        return weekArray
-    //    }
 }
 
 //MARK: - SetConstraints
@@ -99,27 +78,12 @@ extension CalendarView: UICollectionViewDataSource {
     }
 }
 
-//MARK: - UICollectionViewDelegate
+// MARK: - UICollectionViewDelegate
 extension CalendarView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //        let calendar = Calendar.current
-        //        let formatter = DateFormatter()
-        //        formatter.timeZone = TimeZone(abbreviation: "UTC")
-        //        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        //        let components = calendar.dateComponents([.month, .year], from: Date())
-        //        guard let month = components.month else { return }
-        //        guard let year = components.year else { return }
-        //
-        //        guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell else { return }
-        //        guard let numberOfDayString = cell.numberOfDayLabel.text else { return }
-        //        guard let numberOfDay = Int(numberOfDayString) else { return }
-        //
-        //        guard let date = formatter.date(from: "\(year)/\(month)/\(numberOfDay) 00:00") else { return }
-        //
-        //        cellCollectionViewDelegate?.selectItem(date: date)
-        
+        // TODO: Need to test what is better to use here Date().localDate() or just Date()
         let dateTimeZone = Date().localDate()
         
         switch indexPath.item {
