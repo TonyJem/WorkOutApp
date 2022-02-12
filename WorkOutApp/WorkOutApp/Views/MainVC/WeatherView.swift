@@ -19,7 +19,7 @@ class WeatherView: UIView {
         return label
     }()
     
-    private let weatherDescriptionLabel: UILabel = {
+    let weatherDescriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Хорошая погода, чтобы позаниматься на улице"
         label.font = .robotoMedium14()
