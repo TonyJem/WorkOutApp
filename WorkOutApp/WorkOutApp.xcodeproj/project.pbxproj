@@ -190,7 +190,7 @@
 				3AE896B127B1AB2500D2DE7B /* OnboardingVC */,
 				3A78AB45279493860032270C /* MainVC */,
 				3A78AB51279752700032270C /* NewWorkoutVC */,
-				3AE8969227A6622600D2DE7B /* StartWorkoutVC */,
+				3AE8969227A6622600D2DE7B /* RepsWorkoutVC */,
 				3AE8969D27A87B3A00D2DE7B /* TimerWorkoutVC */,
 				3AE896A227ADACF500D2DE7B /* StatisticVC */,
 				3AE896A827ADB3A300D2DE7B /* ProfileVC */,
@@ -297,12 +297,12 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
-		3AE8969227A6622600D2DE7B /* StartWorkoutVC */ = {
+		3AE8969227A6622600D2DE7B /* RepsWorkoutVC */ = {
 			isa = PBXGroup;
 			children = (
 				3AE8969027A6621600D2DE7B /* WorkoutParametersView.swift */,
 			);
-			path = StartWorkoutVC;
+			path = RepsWorkoutVC;
 			sourceTree = "<group>";
 		};
 		3AE8969D27A87B3A00D2DE7B /* TimerWorkoutVC */ = {
