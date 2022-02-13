@@ -18,8 +18,9 @@ extension Date {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
-        
-        let calendar = Calendar.current
+
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(abbreviation: "UTC")!
         let day = calendar.component(.day, from: self)
         let month = calendar.component(.month, from: self)
         let year = calendar.component(.year, from: self)
