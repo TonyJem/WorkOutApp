@@ -179,6 +179,13 @@ class NewWorkoutViewController: UIViewController {
         tapScreen.cancelsTouchesInView = false
         view.addGestureRecognizer(swipeScreen)
     }
+    
+    private func createNotification() {
+        let notifications = Notifications()
+        let stringDate = workoutModel.workoutDate.ddMMyyyyFromDate()
+        print(workoutModel.workoutDate)
+        notifications.scheduleDateNotification(date: workoutModel.workoutDate, id: "workout" + stringDate)
+    }
 }
 
 // MARK: - UITextFieldDelegate
