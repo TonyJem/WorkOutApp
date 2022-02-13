@@ -2,14 +2,14 @@ import UIKit
 
 class WeatherView: UIView {
     
-    private let weatherImageView: UIImageView = {
+    let weatherImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(named: "sun")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    private let weatherStatusLabel: UILabel = {
+    let weatherStatusLabel: UILabel = {
         let label = UILabel()
         label.text = "Солнечно"
         label.font = .robotoMedium18()

@@ -8,6 +8,7 @@ class MainViewController: UIViewController {
     private let idWorkoutTableViewCell = "idWorkoutTableViewCell"
     
     private var workoutArray: Results<WorkoutModel>!
+    private var userArray: Results<UserModel>!
     
     // MARK: - Views
     private let calendarView = CalendarView()
@@ -17,6 +18,7 @@ class MainViewController: UIViewController {
         let imageView = UIImageView()
         imageView.backgroundColor = #colorLiteral(red: 0.7607843137, green: 0.7607843137, blue: 0.7607843137, alpha: 1)
         imageView.layer.borderWidth = 5
+        imageView.clipsToBounds = true
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -74,7 +76,6 @@ class MainViewController: UIViewController {
         tableView.bounces = false
         tableView.showsVerticalScrollIndicator = false
         tableView.delaysContentTouches = false
-//        tableView.isHidden = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -83,7 +84,6 @@ class MainViewController: UIViewController {
        let imageView = UIImageView()
         imageView.image = UIImage(named: "noTraining")
         imageView.contentMode = .scaleAspectFit
-//        imageView.isHidden = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -97,6 +97,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         tableView.reloadData()
+        setupUserParameters()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -108,10 +109,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userArray = localRealm.objects(UserModel.self)
         setupViews()
         setConstraints()
         setDelegates()
+        setupUserParameters()
         getWorkouts(date: Date())
+        getWeather()
         tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idWorkoutTableViewCell)
     }
     
@@ -144,8 +148,20 @@ class MainViewController: UIViewController {
         view.addSubview(noWorkoutImageView)
     }
     
+    private func setupUserParameters() {
+        if userArray.count != 0 {
+            userNameLabel.text = userArray[0].userFirstName + userArray[0].userSecondName
+        
+            guard let data = userArray[0].userImage else { return }
+            guard let image = UIImage(data: data) else { return }
+            userPhotoImageView.image = image
+        }
+    }
+    
     private func getWorkouts(date: Date) {
-        let dateTimeZone = date.localDate()
+//        let dateTimeZone = date.localDate()
+//    TODO: Need to fins out if we need localDate() or just Date()
+        let dateTimeZone = date
         let weekday = dateTimeZone.getWeekdayNumber()
         let dateStart = dateTimeZone.startEndDate().0
         let dateEnd = dateTimeZone.startEndDate().1
@@ -178,6 +194,22 @@ class MainViewController: UIViewController {
             let onboardingViewController = OnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             present(onboardingViewController, animated: false)
+        }
+    }
+    
+    private func getWeather() {
+        NetworkDataFetch.shared.fetchWeather { [weak self] model, error in
+            guard let self = self else { return }
+            if error == nil {
+                guard let model = model else { return }
+                self.weatherView.weatherStatusLabel.text = "\(model.currently.iconLocal) \(model.currently.temperatureCelsius)°C"
+                self.weatherView.weatherDescriptionLabel.text = model.currently.description
+                
+                guard let imageIcon = model.currently.icon else { return }
+                self.weatherView.weatherImageView.image = UIImage(named: imageIcon)
+            } else {
+                self.alertOk(title: "Error", message: "No weather data")
+            }
         }
     }
 }
