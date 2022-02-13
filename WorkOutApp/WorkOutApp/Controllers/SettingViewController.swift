@@ -219,10 +219,8 @@ class SettingViewController: UIViewController {
         
         if userArray.count == 0 {
             RealmManager.shared.saveUserModel(model: userModel)
-            //            userModel = UserModel()
         } else {
             RealmManager.shared.updateUserModel(model: userModel)
-            
         }
         userModel = UserModel()
     }
@@ -361,4 +359,3 @@ extension SettingViewController {
         ])
     }
 }
-
