@@ -187,6 +187,14 @@ extension StatisticViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameTextField.resignFirstResponder()
     }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        isFiltred = false
+        differenceArray = [DifferenceWorkout]()
+        getDifferenceModel(dateStart: dateToday.offsetDays(days: 7))
+        tableView.reloadData()
+        return true
+    }
 }
 
 // MARK: - UITableViewDataSource
