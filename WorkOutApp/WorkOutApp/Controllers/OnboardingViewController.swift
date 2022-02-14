@@ -7,7 +7,12 @@ struct OnboardingStruct {
 }
 
 class OnboardingViewController: UIViewController {
+    private let idOnboardingCell = "idOnboardingCell"
     
+    private var onboardingArray = [OnboardingStruct]()
+    private var collectionItem = 0
+    
+    // MARK: - Views
     private let nextButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .white
@@ -41,12 +46,7 @@ class OnboardingViewController: UIViewController {
         return collectionView
     }()
     
-    private let idOnboardingCell = "idOnboardingCell"
-    
-    private var onboardingArray = [OnboardingStruct]()
-    
-    private var collectionItem = 0
-    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +55,24 @@ class OnboardingViewController: UIViewController {
         setDelegates()
     }
     
+    // MARK: - Actions
+    @objc private func nextButtonTapped() {
+        
+        if collectionItem == 1 {
+            nextButton.setTitle("START", for: .normal)
+        }
+        
+        if collectionItem == 2 {
+            saveUserDefaults()
+        } else {
+            collectionItem += 1
+            let index: IndexPath = [0 , collectionItem]
+            collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            pageControl.currentPage = collectionItem
+        }
+    }
+    
+    // MARK: - Private
     private func setupViews() {
         view.backgroundColor = .specialGreen
         
@@ -65,9 +83,7 @@ class OnboardingViewController: UIViewController {
         
         guard let imageFirst = UIImage(named: "onboardingFirst"),
               let imageSecond = UIImage(named: "onboardingSecond"),
-              let imageThird = UIImage(named: "onboardingThird") else {
-                  return
-              }
+              let imageThird = UIImage(named: "onboardingThird") else { return }
         
         let firstScreen = OnboardingStruct(topLabel: "Have a good health",
                                            bottomLabel: "Being healthy is all, no health is nothing. So why do not we",
@@ -86,22 +102,6 @@ class OnboardingViewController: UIViewController {
         collectionView.delegate = self
     }
     
-    @objc private func nextButtonTapped() {
-        
-        if collectionItem == 1 {
-            nextButton.setTitle("START", for: .normal)
-        }
-        
-        if collectionItem == 2 {
-            saveUserDefaults()
-        } else {
-            collectionItem += 1
-            let index: IndexPath = [0 , collectionItem]
-            collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-            pageControl.currentPage = collectionItem
-        }
-    }
-    
     private func saveUserDefaults() {
         let userDefaults = UserDefaults.standard
         userDefaults.set(true, forKey: "OnBoardingWasViewed")
@@ -109,7 +109,7 @@ class OnboardingViewController: UIViewController {
     }
 }
 
-//MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 extension OnboardingViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -124,14 +124,17 @@ extension OnboardingViewController: UICollectionViewDataSource {
     }
 }
 
-//MARK: - UICollectionViewDelegateFlowLayout
-
+// MARK: - UICollectionViewDelegateFlowLayout
 extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: view.frame.width, height: collectionView.frame.height)
     }
 }
 
+// MARK: - Constraints
 extension OnboardingViewController {
     
     private func setConstraints() {
